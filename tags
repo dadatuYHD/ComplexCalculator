@@ -1,0 +1,440 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+BUFSIZE	calc_complex_newstate.si4project/Backup/CalcInput(8073).c	21;"	d	file:
+BUFSIZE	calc_complex_newstate.si4project/Backup/CalcState(404).c	21;"	d	file:
+BUFSIZE	calc_complex_newstate.si4project/Backup/CalcState(48).c	21;"	d	file:
+BUFSIZE	calc_complex_newstate.si4project/Backup/CalcState(548).c	21;"	d	file:
+BUFSIZE	source/CalcInput.c	21;"	d	file:
+BUFSIZE	source/CalcState.c	21;"	d	file:
+CALCEXE_RET_FAIL	include/CalcExe.h	14;"	d
+CALCEXE_RET_FAIL_1ST_LESS_2ND	include/CalcExe.h	16;"	d
+CALCEXE_RET_FAIL_DENOMINATOR_ZERO	include/CalcExe.h	15;"	d
+CALCEXE_RET_OK	include/CalcExe.h	13;"	d
+CALCINPUT_CONTINUE	include/CalcInput.h	17;"	d
+CALCINPUT_EXIT	include/CalcInput.h	18;"	d
+CALCINPUT_RET_FAIL	include/CalcInput.h	14;"	d
+CALCINPUT_RET_INPUT_INVALID	include/CalcInput.h	16;"	d
+CALCINPUT_RET_INPUT_OUTOFRANGE	include/CalcInput.h	15;"	d
+CALCINPUT_RET_INPUT_SCORE_FAIL	include/CalcInput.h	19;"	d
+CALCINPUT_RET_OK	include/CalcInput.h	13;"	d
+CALCSTATE_EXIT	calc_complex_newstate.si4project/Backup/CalcState(1647).h	/^	CALCSTATE_EXIT,$/;"	e	enum:__anon1
+CALCSTATE_EXIT	calc_complex_newstate.si4project/Backup/CalcState(2605).h	/^	CALCSTATE_EXIT,$/;"	e	enum:__anon5
+CALCSTATE_EXIT	calc_complex_newstate.si4project/Backup/CalcState(2741).h	/^	CALCSTATE_EXIT,$/;"	e	enum:__anon9
+CALCSTATE_EXIT	source/CalcState.c	/^	CALCSTATE_EXIT,$/;"	e	enum:__anon14	file:
+CALCSTATE_INIT	calc_complex_newstate.si4project/Backup/CalcState(1647).h	/^	CALCSTATE_INIT = 0,$/;"	e	enum:__anon1
+CALCSTATE_INIT	calc_complex_newstate.si4project/Backup/CalcState(2605).h	/^	CALCSTATE_INIT = 0,$/;"	e	enum:__anon5
+CALCSTATE_INIT	calc_complex_newstate.si4project/Backup/CalcState(2741).h	/^	CALCSTATE_INIT = 0,$/;"	e	enum:__anon9
+CALCSTATE_INIT	source/CalcState.c	/^	CALCSTATE_INIT = 0,$/;"	e	enum:__anon14	file:
+CALCSTATE_INVALID	calc_complex_newstate.si4project/Backup/CalcState(1647).h	/^	CALCSTATE_INVALID,$/;"	e	enum:__anon1
+CALCSTATE_INVALID	calc_complex_newstate.si4project/Backup/CalcState(2605).h	/^	CALCSTATE_INVALID,$/;"	e	enum:__anon5
+CALCSTATE_INVALID	calc_complex_newstate.si4project/Backup/CalcState(2741).h	/^	CALCSTATE_INVALID,$/;"	e	enum:__anon9
+CALCSTATE_INVALID	source/CalcState.c	/^	CALCSTATE_INVALID,$/;"	e	enum:__anon14	file:
+CALCSTATE_MODESELECT	calc_complex_newstate.si4project/Backup/CalcState(1647).h	/^	CALCSTATE_MODESELECT,$/;"	e	enum:__anon1
+CALCSTATE_MODESELECT	calc_complex_newstate.si4project/Backup/CalcState(2605).h	/^	CALCSTATE_MODESELECT,$/;"	e	enum:__anon5
+CALCSTATE_MODESELECT	calc_complex_newstate.si4project/Backup/CalcState(2741).h	/^	CALCSTATE_MODESELECT,$/;"	e	enum:__anon9
+CALCSTATE_MODESELECT	source/CalcState.c	/^	CALCSTATE_MODESELECT,$/;"	e	enum:__anon14	file:
+CALCSTATE_RET_FAIL	calc_complex_newstate.si4project/Backup/CalcState(1647).h	16;"	d
+CALCSTATE_RET_FAIL	calc_complex_newstate.si4project/Backup/CalcState(2605).h	16;"	d
+CALCSTATE_RET_FAIL	calc_complex_newstate.si4project/Backup/CalcState(2741).h	16;"	d
+CALCSTATE_RET_FAIL	include/CalcState.h	15;"	d
+CALCSTATE_RET_FAIL_INPUTPARAMNULL	calc_complex_newstate.si4project/Backup/CalcState(1647).h	17;"	d
+CALCSTATE_RET_FAIL_INPUTPARAMNULL	calc_complex_newstate.si4project/Backup/CalcState(2605).h	17;"	d
+CALCSTATE_RET_FAIL_INPUTPARAMNULL	calc_complex_newstate.si4project/Backup/CalcState(2741).h	17;"	d
+CALCSTATE_RET_FAIL_INPUTPARAMNULL	include/CalcState.h	16;"	d
+CALCSTATE_RET_OK	calc_complex_newstate.si4project/Backup/CalcState(1647).h	15;"	d
+CALCSTATE_RET_OK	calc_complex_newstate.si4project/Backup/CalcState(2605).h	15;"	d
+CALCSTATE_RET_OK	calc_complex_newstate.si4project/Backup/CalcState(2741).h	15;"	d
+CALCSTATE_RET_OK	include/CalcState.h	14;"	d
+CALCSTATE_RUNNING	calc_complex_newstate.si4project/Backup/CalcState(1647).h	/^	CALCSTATE_RUNNING,$/;"	e	enum:__anon1
+CALCSTATE_RUNNING	calc_complex_newstate.si4project/Backup/CalcState(2605).h	/^	CALCSTATE_RUNNING,$/;"	e	enum:__anon5
+CALCSTATE_RUNNING	calc_complex_newstate.si4project/Backup/CalcState(2741).h	/^	CALCSTATE_RUNNING,$/;"	e	enum:__anon9
+CALCSTATE_RUNNING	source/CalcState.c	/^	CALCSTATE_RUNNING,$/;"	e	enum:__anon14	file:
+CALCSTATE_WAIT	calc_complex_newstate.si4project/Backup/CalcState(1647).h	/^	CALCSTATE_WAIT,$/;"	e	enum:__anon1
+CALCSTATE_WAIT	calc_complex_newstate.si4project/Backup/CalcState(2605).h	/^	CALCSTATE_WAIT,$/;"	e	enum:__anon5
+CALCSTATE_WAIT	calc_complex_newstate.si4project/Backup/CalcState(2741).h	/^	CALCSTATE_WAIT,$/;"	e	enum:__anon9
+CALCSTATE_WAIT	source/CalcState.c	/^	CALCSTATE_WAIT,$/;"	e	enum:__anon14	file:
+CALCSTRING_CALC_MODE_INVAILD_SELECT_AGAIN	include/CalcOutput.h	14;"	d
+CALCSTRING_COMPLEX_CALC_RUNNING	include/CalcOutput.h	24;"	d
+CALCSTRING_COMPLEX_MODE_INPUT_STU_INFO_SCORE_NAME	include/CalcOutput.h	27;"	d
+CALCSTRING_COMPLEX_MODE_STATISTICAL_METHOD	include/CalcOutput.h	25;"	d
+CALCSTRING_COMPLEX_MODE_STATISTICAL_METHOD_SLECT_AGAIN	include/CalcOutput.h	26;"	d
+CALCSTRING_CONTINUE_OR_EXIT	include/CalcOutput.h	22;"	d
+CALCSTRING_INPUT_1ST	include/CalcOutput.h	16;"	d
+CALCSTRING_INPUT_1ST_AGAIN	include/CalcOutput.h	19;"	d
+CALCSTRING_INPUT_2ST	include/CalcOutput.h	17;"	d
+CALCSTRING_INPUT_2ST_AGAIN	include/CalcOutput.h	20;"	d
+CALCSTRING_INPUT_OPERATOR	include/CalcOutput.h	18;"	d
+CALCSTRING_INPUT_OPERATOR_AGAIN	include/CalcOutput.h	21;"	d
+CALCSTRING_SELECT_MODE	include/CalcOutput.h	15;"	d
+CALCSTRING_SIMPLE_CALC_RUNNING	include/CalcOutput.h	23;"	d
+CALC_DEBUG	include/calc_complex_debug.h	13;"	d
+CALC_ERROR	include/calc_complex_debug.h	15;"	d
+COMPCALCSTATE_CALCAVERAGE	calc_complex_newstate.si4project/Backup/CalcState(1647).h	/^	COMPCALCSTATE_CALCAVERAGE,$/;"	e	enum:__anon3
+COMPCALCSTATE_CALCAVERAGE	calc_complex_newstate.si4project/Backup/CalcState(2605).h	/^	COMPCALCSTATE_CALCAVERAGE,$/;"	e	enum:__anon7
+COMPCALCSTATE_CALCAVERAGE	calc_complex_newstate.si4project/Backup/CalcState(2741).h	/^	COMPCALCSTATE_CALCAVERAGE,$/;"	e	enum:__anon11
+COMPCALCSTATE_CALCAVERAGE	source/CalcState.c	/^	COMPCALCSTATE_CALCAVERAGE,$/;"	e	enum:__anon16	file:
+COMPCALCSTATE_CALCVARIANCE	calc_complex_newstate.si4project/Backup/CalcState(1647).h	/^	COMPCALCSTATE_CALCVARIANCE,$/;"	e	enum:__anon3
+COMPCALCSTATE_CALCVARIANCE	calc_complex_newstate.si4project/Backup/CalcState(2605).h	/^	COMPCALCSTATE_CALCVARIANCE,$/;"	e	enum:__anon7
+COMPCALCSTATE_CALCVARIANCE	calc_complex_newstate.si4project/Backup/CalcState(2741).h	/^	COMPCALCSTATE_CALCVARIANCE,$/;"	e	enum:__anon11
+COMPCALCSTATE_CALCVARIANCE	source/CalcState.c	/^	COMPCALCSTATE_CALCVARIANCE,$/;"	e	enum:__anon16	file:
+COMPCALCSTATE_EXIT	calc_complex_newstate.si4project/Backup/CalcState(1647).h	/^	COMPCALCSTATE_EXIT,$/;"	e	enum:__anon3
+COMPCALCSTATE_EXIT	calc_complex_newstate.si4project/Backup/CalcState(2605).h	/^	COMPCALCSTATE_EXIT,$/;"	e	enum:__anon7
+COMPCALCSTATE_EXIT	calc_complex_newstate.si4project/Backup/CalcState(2741).h	/^	COMPCALCSTATE_EXIT,$/;"	e	enum:__anon11
+COMPCALCSTATE_EXIT	source/CalcState.c	/^	COMPCALCSTATE_EXIT,$/;"	e	enum:__anon16	file:
+COMPCALCSTATE_INIT	calc_complex_newstate.si4project/Backup/CalcState(1647).h	/^	COMPCALCSTATE_INIT = 0,$/;"	e	enum:__anon3
+COMPCALCSTATE_INIT	calc_complex_newstate.si4project/Backup/CalcState(2605).h	/^	COMPCALCSTATE_INIT = 0,$/;"	e	enum:__anon7
+COMPCALCSTATE_INIT	calc_complex_newstate.si4project/Backup/CalcState(2741).h	/^	COMPCALCSTATE_INIT = 0,$/;"	e	enum:__anon11
+COMPCALCSTATE_INIT	source/CalcState.c	/^	COMPCALCSTATE_INIT = 0,$/;"	e	enum:__anon16	file:
+COMPCALCSTATE_INPUTMENU	calc_complex_newstate.si4project/Backup/CalcState(1647).h	/^	COMPCALCSTATE_INPUTMENU,$/;"	e	enum:__anon3
+COMPCALCSTATE_INPUTMENU	calc_complex_newstate.si4project/Backup/CalcState(2605).h	/^	COMPCALCSTATE_INPUTMENU,$/;"	e	enum:__anon7
+COMPCALCSTATE_INPUTMENU	calc_complex_newstate.si4project/Backup/CalcState(2741).h	/^	COMPCALCSTATE_INPUTMENU,$/;"	e	enum:__anon11
+COMPCALCSTATE_INPUTMENU	source/CalcState.c	/^	COMPCALCSTATE_INPUTMENU,$/;"	e	enum:__anon16	file:
+COMPCALCSTATE_INPUTSTUDENTINFO	calc_complex_newstate.si4project/Backup/CalcState(1647).h	/^	COMPCALCSTATE_INPUTSTUDENTINFO,$/;"	e	enum:__anon3
+COMPCALCSTATE_INPUTSTUDENTINFO	calc_complex_newstate.si4project/Backup/CalcState(2605).h	/^	COMPCALCSTATE_INPUTSTUDENTINFO,$/;"	e	enum:__anon7
+COMPCALCSTATE_INPUTSTUDENTINFO	calc_complex_newstate.si4project/Backup/CalcState(2741).h	/^	COMPCALCSTATE_INPUTSTUDENTINFO,$/;"	e	enum:__anon11
+COMPCALCSTATE_INPUTSTUDENTINFO	source/CalcState.c	/^	COMPCALCSTATE_INPUTSTUDENTINFO,$/;"	e	enum:__anon16	file:
+COMPCALCSTATE_INVALID	calc_complex_newstate.si4project/Backup/CalcState(1647).h	/^	COMPCALCSTATE_INVALID,$/;"	e	enum:__anon3
+COMPCALCSTATE_INVALID	calc_complex_newstate.si4project/Backup/CalcState(2605).h	/^	COMPCALCSTATE_INVALID,$/;"	e	enum:__anon7
+COMPCALCSTATE_INVALID	calc_complex_newstate.si4project/Backup/CalcState(2741).h	/^	COMPCALCSTATE_INVALID,$/;"	e	enum:__anon11
+COMPCALCSTATE_INVALID	source/CalcState.c	/^	COMPCALCSTATE_INVALID,$/;"	e	enum:__anon16	file:
+COMPCALCSTATE_PRINTAVERAGE	calc_complex_newstate.si4project/Backup/CalcState(1647).h	/^	COMPCALCSTATE_PRINTAVERAGE,$/;"	e	enum:__anon3
+COMPCALCSTATE_PRINTAVERAGE	calc_complex_newstate.si4project/Backup/CalcState(2605).h	/^	COMPCALCSTATE_PRINTAVERAGE,$/;"	e	enum:__anon7
+COMPCALCSTATE_PRINTAVERAGE	calc_complex_newstate.si4project/Backup/CalcState(2741).h	/^	COMPCALCSTATE_PRINTAVERAGE,$/;"	e	enum:__anon11
+COMPCALCSTATE_PRINTAVERAGE	source/CalcState.c	/^	COMPCALCSTATE_PRINTAVERAGE,$/;"	e	enum:__anon16	file:
+COMPCALCSTATE_PRINTSTUDENTINFO	calc_complex_newstate.si4project/Backup/CalcState(1647).h	/^	COMPCALCSTATE_PRINTSTUDENTINFO,$/;"	e	enum:__anon3
+COMPCALCSTATE_PRINTSTUDENTINFO	calc_complex_newstate.si4project/Backup/CalcState(2605).h	/^	COMPCALCSTATE_PRINTSTUDENTINFO,$/;"	e	enum:__anon7
+COMPCALCSTATE_PRINTSTUDENTINFO	calc_complex_newstate.si4project/Backup/CalcState(2741).h	/^	COMPCALCSTATE_PRINTSTUDENTINFO,$/;"	e	enum:__anon11
+COMPCALCSTATE_PRINTSTUDENTINFO	source/CalcState.c	/^	COMPCALCSTATE_PRINTSTUDENTINFO,$/;"	e	enum:__anon16	file:
+COMPCALCSTATE_PRINTVARIANCE	calc_complex_newstate.si4project/Backup/CalcState(1647).h	/^	COMPCALCSTATE_PRINTVARIANCE,$/;"	e	enum:__anon3
+COMPCALCSTATE_PRINTVARIANCE	calc_complex_newstate.si4project/Backup/CalcState(2605).h	/^	COMPCALCSTATE_PRINTVARIANCE,$/;"	e	enum:__anon7
+COMPCALCSTATE_PRINTVARIANCE	calc_complex_newstate.si4project/Backup/CalcState(2741).h	/^	COMPCALCSTATE_PRINTVARIANCE,$/;"	e	enum:__anon11
+COMPCALCSTATE_PRINTVARIANCE	source/CalcState.c	/^	COMPCALCSTATE_PRINTVARIANCE,$/;"	e	enum:__anon16	file:
+CalState_UserModeSelect	calc_complex_newstate.si4project/Backup/CalcState(404).c	/^int CalState_UserModeSelect(char *cpSelectMode)$/;"	f
+CalState_UserModeSelect	calc_complex_newstate.si4project/Backup/CalcState(404).c	/^int CalState_UserModeSelect(int state)$/;"	f
+CalState_UserModeSelect	calc_complex_newstate.si4project/Backup/CalcState(48).c	/^int CalState_UserModeSelect(int iState)$/;"	f
+CalState_UserModeSelect	calc_complex_newstate.si4project/Backup/CalcState(548).c	/^CalcState_e CalState_UserModeSelect(int iState)$/;"	f
+CalState_UserModeSelect	source/CalcState.c	/^CalcState_e CalState_UserModeSelect(int iState)$/;"	f
+CalcInput_Char	calc_complex_newstate.si4project/Backup/CalcInput(8073).c	/^int CalcInput_Char(char * pcOperator)$/;"	f
+CalcInput_Char	source/CalcInput.c	/^int CalcInput_Char(char * pcOperator)$/;"	f
+CalcInput_Int	calc_complex_newstate.si4project/Backup/CalcInput(8073).c	/^int CalcInput_Int(unsigned int * uipInputInt)$/;"	f
+CalcInput_Int	source/CalcInput.c	/^int CalcInput_Int(unsigned int * uipInputInt)$/;"	f
+CalcInput_IntFromBuf	calc_complex_newstate.si4project/Backup/CalcInput(8073).c	/^int CalcInput_IntFromBuf(unsigned int * uipInputInt, char * pcInputBuf)$/;"	f
+CalcInput_IntFromBuf	source/CalcInput.c	/^int CalcInput_IntFromBuf(unsigned int * uipInputInt, char * pcInputBuf)$/;"	f
+CalcInput_NumCheck	calc_complex_newstate.si4project/Backup/CalcInput(8073).c	/^int CalcInput_NumCheck(unsigned int uipInputInt)$/;"	f
+CalcInput_NumCheck	source/CalcInput.c	/^int CalcInput_NumCheck(unsigned int uipInputInt)$/;"	f
+CalcInput_OperatorCheck	calc_complex_newstate.si4project/Backup/CalcInput(8073).c	/^int CalcInput_OperatorCheck(char * pcOperator)$/;"	f
+CalcInput_OperatorCheck	source/CalcInput.c	/^int CalcInput_OperatorCheck(char * pcOperator)$/;"	f
+CalcInput_StrNumConvertIntegerNum	calc_complex_newstate.si4project/Backup/CalcInput(8073).c	/^int CalcInput_StrNumConvertIntegerNum(unsigned int * uipInputInt, char * pcInputBuf)$/;"	f
+CalcInput_StrNumConvertIntegerNum	source/CalcInput.c	/^int CalcInput_StrNumConvertIntegerNum(unsigned int * uipInputInt, char * pcInputBuf)$/;"	f
+CalcInput_String	calc_complex_newstate.si4project/Backup/CalcInput(8073).c	/^int CalcInput_String(char * pcInputBuf)$/;"	f
+CalcInput_String	source/CalcInput.c	/^int CalcInput_String(char * pcInputBuf)$/;"	f
+CalcInput_StringFromBuf	calc_complex_newstate.si4project/Backup/CalcInput(8073).c	/^int CalcInput_StringFromBuf(char * pcStuInfoName, char * pcStuInfoChineseSocre,$/;"	f
+CalcInput_StringFromBuf	source/CalcInput.c	/^int CalcInput_StringFromBuf(char * pcStuInfoName, char * pcStuInfoChineseSocre,$/;"	f
+CalcInput_StuInfo	calc_complex_newstate.si4project/Backup/CalcInput(8073).c	/^int CalcInput_StuInfo(Stu_E * pStuInfo)$/;"	f
+CalcInput_StuInfo	source/CalcInput.c	/^int CalcInput_StuInfo(Stu_E * pStuInfo)$/;"	f
+CalcInput_StuInfoCheck	calc_complex_newstate.si4project/Backup/CalcInput(8073).c	/^int CalcInput_StuInfoCheck(Stu_E pStuInfo)$/;"	f
+CalcInput_StuInfoCheck	source/CalcInput.c	/^int CalcInput_StuInfoCheck(Stu_E pStuInfo)$/;"	f
+CalcInput_StuInfoFromBuf	calc_complex_newstate.si4project/Backup/CalcInput(8073).c	/^int CalcInput_StuInfoFromBuf(Stu_E * pStuInfo, char * pcStuInfo_a)$/;"	f
+CalcInput_StuInfoFromBuf	source/CalcInput.c	/^int CalcInput_StuInfoFromBuf(Stu_E * pStuInfo, char * pcStuInfo_a)$/;"	f
+CalcOutput_HintMsg	source/CalcOutput.c	/^void CalcOutput_HintMsg(unsigned int HintMsg)$/;"	f
+CalcOutput_Result	source/CalcOutput.c	/^void CalcOutput_Result(unsigned int ui1stNum, char cOperator, unsigned int ui2ndNum, unsigned int uiResult)$/;"	f
+CalcState_Exit	calc_complex_newstate.si4project/Backup/CalcState(404).c	/^int CalcState_Exit(int state)$/;"	f
+CalcState_Exit	calc_complex_newstate.si4project/Backup/CalcState(48).c	/^int CalcState_Exit(int iState)$/;"	f
+CalcState_Exit	calc_complex_newstate.si4project/Backup/CalcState(548).c	/^CalcState_e CalcState_Exit(int iState)$/;"	f
+CalcState_Exit	source/CalcState.c	/^CalcState_e CalcState_Exit(int iState)$/;"	f
+CalcState_GetCurState	calc_complex_newstate.si4project/Backup/CalcState(404).c	/^int CalcState_GetCurState(CalState_E *epState)$/;"	f
+CalcState_GetCurState	calc_complex_newstate.si4project/Backup/CalcState(48).c	/^int CalcState_GetCurState(CalState_E *epState)$/;"	f
+CalcState_GetCurState	calc_complex_newstate.si4project/Backup/CalcState(548).c	/^int CalcState_GetCurState(CalState_E *epState)$/;"	f
+CalcState_Init	calc_complex_newstate.si4project/Backup/CalcState(404).c	/^int CalcState_Init(int state)$/;"	f
+CalcState_Init	calc_complex_newstate.si4project/Backup/CalcState(48).c	/^int CalcState_Init(int iState)$/;"	f
+CalcState_Init	calc_complex_newstate.si4project/Backup/CalcState(548).c	/^CalcState_e CalcState_Init(int iState)$/;"	f
+CalcState_Init	source/CalcState.c	/^CalcState_e CalcState_Init(int iState)$/;"	f
+CalcState_Main	calc_complex_newstate.si4project/Backup/CalcState(404).c	/^void CalcState_Main(void)$/;"	f
+CalcState_Main	calc_complex_newstate.si4project/Backup/CalcState(48).c	/^void CalcState_Main(void)$/;"	f
+CalcState_Main	calc_complex_newstate.si4project/Backup/CalcState(548).c	/^void CalcState_Main(void)$/;"	f
+CalcState_Main	source/CalcState.c	/^void CalcState_Main(void)$/;"	f
+CalcState_Running	calc_complex_newstate.si4project/Backup/CalcState(404).c	/^int CalcState_Running(int state)$/;"	f
+CalcState_Running	calc_complex_newstate.si4project/Backup/CalcState(48).c	/^int CalcState_Running(int iState)$/;"	f
+CalcState_Running	calc_complex_newstate.si4project/Backup/CalcState(548).c	/^CalcState_e CalcState_Running(int iState)$/;"	f
+CalcState_Running	source/CalcState.c	/^CalcState_e CalcState_Running(int iState)$/;"	f
+CalcState_StatMethodSel	calc_complex_newstate.si4project/Backup/CalcState(404).c	/^CalState_E CalcState_StatMethodSel(char * cpcStatMethod)$/;"	f
+CalcState_StatMethodSel	calc_complex_newstate.si4project/Backup/CalcState(48).c	/^int CalcState_StatMethodSel(char * cpcStatMethod)$/;"	f
+CalcState_StatMethodSel	calc_complex_newstate.si4project/Backup/CalcState(548).c	/^CompCalcState_e CalcState_StatMethodSel(char * cpcStatMethod)$/;"	f
+CalcState_StatMethodSelCA	calc_complex_newstate.si4project/Backup/CalcState(404).c	/^int CalcState_StatMethodSelCA(void)$/;"	f
+CalcState_StatMethodSelCA	calc_complex_newstate.si4project/Backup/CalcState(48).c	/^int CalcState_StatMethodSelCA(void)$/;"	f
+CalcState_StatMethodSelCV	calc_complex_newstate.si4project/Backup/CalcState(404).c	/^int CalcState_StatMethodSelCV(void)$/;"	f
+CalcState_StatMethodSelCV	calc_complex_newstate.si4project/Backup/CalcState(48).c	/^int CalcState_StatMethodSelCV(void)$/;"	f
+CalcState_StatMethodSelE	calc_complex_newstate.si4project/Backup/CalcState(404).c	/^int CalcState_StatMethodSelE(void)$/;"	f
+CalcState_StatMethodSelE	calc_complex_newstate.si4project/Backup/CalcState(48).c	/^int CalcState_StatMethodSelE(void)$/;"	f
+CalcState_StatMethodSelFail	calc_complex_newstate.si4project/Backup/CalcState(404).c	/^int CalcState_StatMethodSelFail(void)$/;"	f
+CalcState_StatMethodSelFail	calc_complex_newstate.si4project/Backup/CalcState(48).c	/^int CalcState_StatMethodSelFail(void)$/;"	f
+CalcState_StatMethodSelISI	calc_complex_newstate.si4project/Backup/CalcState(404).c	/^int CalcState_StatMethodSelISI(void)$/;"	f
+CalcState_StatMethodSelISI	calc_complex_newstate.si4project/Backup/CalcState(48).c	/^int CalcState_StatMethodSelISI(void)$/;"	f
+CalcState_StatMethodSelPA	calc_complex_newstate.si4project/Backup/CalcState(404).c	/^int CalcState_StatMethodSelPA(void)$/;"	f
+CalcState_StatMethodSelPA	calc_complex_newstate.si4project/Backup/CalcState(48).c	/^int CalcState_StatMethodSelPA(void)$/;"	f
+CalcState_StatMethodSelPSI	calc_complex_newstate.si4project/Backup/CalcState(404).c	/^int CalcState_StatMethodSelPSI(void)$/;"	f
+CalcState_StatMethodSelPSI	calc_complex_newstate.si4project/Backup/CalcState(48).c	/^int CalcState_StatMethodSelPSI(void)$/;"	f
+CalcState_StatMethodSelPV	calc_complex_newstate.si4project/Backup/CalcState(404).c	/^ int CalcState_StatMethodSelPV(void)$/;"	f
+CalcState_StatMethodSelPV	calc_complex_newstate.si4project/Backup/CalcState(48).c	/^ int CalcState_StatMethodSelPV(void)$/;"	f
+CalcState_Wait	calc_complex_newstate.si4project/Backup/CalcState(404).c	/^int CalcState_Wait(int state)$/;"	f
+CalcState_Wait	calc_complex_newstate.si4project/Backup/CalcState(48).c	/^int CalcState_Wait(int iState)$/;"	f
+CalcState_Wait	calc_complex_newstate.si4project/Backup/CalcState(548).c	/^CalcState_e CalcState_Wait(int iState)$/;"	f
+CalcState_Wait	source/CalcState.c	/^CalcState_e CalcState_Wait(int iState)$/;"	f
+CalcState_e	calc_complex_newstate.si4project/Backup/CalcState(1647).h	/^} CalcState_e;$/;"	t	typeref:enum:__anon1
+CalcState_e	calc_complex_newstate.si4project/Backup/CalcState(2605).h	/^} CalcState_e;$/;"	t	typeref:enum:__anon5
+CalcState_e	calc_complex_newstate.si4project/Backup/CalcState(2741).h	/^} CalcState_e;$/;"	t	typeref:enum:__anon9
+CalcState_e	source/CalcState.c	/^} CalcState_e;$/;"	t	typeref:enum:__anon14	file:
+Calculating_Div	source/CalcExe.c	/^int Calculating_Div(unsigned int * gui1stNum, unsigned int * gui2ndNum,unsigned int * guiResult)$/;"	f
+Calculating_Mub	source/CalcExe.c	/^int Calculating_Mub(unsigned int * gui1stNum, unsigned int * gui2ndNum,unsigned int * guiResult)$/;"	f
+Calculating_Mul	source/CalcExe.c	/^int Calculating_Mul(unsigned int * gui1stNum, unsigned int * gui2ndNum,unsigned int * guiResult)$/;"	f
+Calculating_StuScoreAverage	source/CalcExe.c	/^int Calculating_StuScoreAverage(Stu_E * pstStu, unsigned int uiStuNumCount, double * dpChineseScoreAverage, $/;"	f
+Calculating_StuScoreVariance	source/CalcExe.c	/^int Calculating_StuScoreVariance(Stu_E * pstStu, unsigned int uiStuNumCount, double * dpChineseScoreVariance, $/;"	f
+Calculating_Sum	source/CalcExe.c	/^int Calculating_Sum(unsigned int * gui1stNum, unsigned int * gui2ndNum,unsigned int * guiResult)$/;"	f
+ComCalcState_Init	calc_complex_newstate.si4project/Backup/CalcState(48).c	/^int ComCalcState_Init(int state)$/;"	f
+ComCalcState_Init	calc_complex_newstate.si4project/Backup/CalcState(548).c	/^CompCalcState_e ComCalcState_Init(int state)$/;"	f
+ComCalcState_Init	source/CalcState.c	/^CompCalcState_e ComCalcState_Init(int state)$/;"	f
+ComCalcState_InputMenu	calc_complex_newstate.si4project/Backup/CalcState(548).c	/^CompCalcState_e ComCalcState_InputMenu(int iState)$/;"	f
+ComCalcState_InputMenu	source/CalcState.c	/^CompCalcState_e ComCalcState_InputMenu(int iState)$/;"	f
+ComCalcState_StatMethodSel	source/CalcState.c	/^CompCalcState_e ComCalcState_StatMethodSel(char * cpcStatMethod)$/;"	f
+ComCalcState_StatMethodSelCA	calc_complex_newstate.si4project/Backup/CalcState(548).c	/^CompCalcState_e ComCalcState_StatMethodSelCA(int iState)$/;"	f
+ComCalcState_StatMethodSelCA	source/CalcState.c	/^CompCalcState_e ComCalcState_StatMethodSelCA(int iState)$/;"	f
+ComCalcState_StatMethodSelCV	calc_complex_newstate.si4project/Backup/CalcState(548).c	/^CompCalcState_e ComCalcState_StatMethodSelCV(int iState)$/;"	f
+ComCalcState_StatMethodSelCV	source/CalcState.c	/^CompCalcState_e ComCalcState_StatMethodSelCV(int iState)$/;"	f
+ComCalcState_StatMethodSelE	calc_complex_newstate.si4project/Backup/CalcState(548).c	/^CompCalcState_e ComCalcState_StatMethodSelE(int iState)$/;"	f
+ComCalcState_StatMethodSelE	source/CalcState.c	/^CompCalcState_e ComCalcState_StatMethodSelE(int iState)$/;"	f
+ComCalcState_StatMethodSelFail	calc_complex_newstate.si4project/Backup/CalcState(548).c	/^CompCalcState_e ComCalcState_StatMethodSelFail(int iState)$/;"	f
+ComCalcState_StatMethodSelFail	source/CalcState.c	/^CompCalcState_e ComCalcState_StatMethodSelFail(int iState)$/;"	f
+ComCalcState_StatMethodSelISI	calc_complex_newstate.si4project/Backup/CalcState(548).c	/^CompCalcState_e ComCalcState_StatMethodSelISI(int iState)$/;"	f
+ComCalcState_StatMethodSelISI	source/CalcState.c	/^CompCalcState_e ComCalcState_StatMethodSelISI(int iState)$/;"	f
+ComCalcState_StatMethodSelPA	calc_complex_newstate.si4project/Backup/CalcState(548).c	/^CompCalcState_e ComCalcState_StatMethodSelPA(int iState)$/;"	f
+ComCalcState_StatMethodSelPA	source/CalcState.c	/^CompCalcState_e ComCalcState_StatMethodSelPA(int iState)$/;"	f
+ComCalcState_StatMethodSelPSI	calc_complex_newstate.si4project/Backup/CalcState(548).c	/^CompCalcState_e ComCalcState_StatMethodSelPSI(int iState)$/;"	f
+ComCalcState_StatMethodSelPSI	source/CalcState.c	/^CompCalcState_e ComCalcState_StatMethodSelPSI(int iState)$/;"	f
+ComCalcState_StatMethodSelPV	calc_complex_newstate.si4project/Backup/CalcState(548).c	/^CompCalcState_e ComCalcState_StatMethodSelPV(int iState)$/;"	f
+ComCalcState_StatMethodSelPV	source/CalcState.c	/^CompCalcState_e ComCalcState_StatMethodSelPV(int iState)$/;"	f
+CompCalcState_Main	calc_complex_newstate.si4project/Backup/CalcState(404).c	/^int CompCalcState_Main(void)$/;"	f
+CompCalcState_Main	calc_complex_newstate.si4project/Backup/CalcState(48).c	/^int CompCalcState_Main(void)$/;"	f
+CompCalcState_Main	calc_complex_newstate.si4project/Backup/CalcState(548).c	/^void CompCalcState_Main(void)$/;"	f
+CompCalcState_Main	source/CalcState.c	/^void CompCalcState_Main(void)$/;"	f
+CompCalcState_e	calc_complex_newstate.si4project/Backup/CalcState(1647).h	/^} CompCalcState_e;$/;"	t	typeref:enum:__anon3
+CompCalcState_e	calc_complex_newstate.si4project/Backup/CalcState(2605).h	/^} CompCalcState_e;$/;"	t	typeref:enum:__anon7
+CompCalcState_e	calc_complex_newstate.si4project/Backup/CalcState(2741).h	/^} CompCalcState_e;$/;"	t	typeref:enum:__anon11
+CompCalcState_e	source/CalcState.c	/^} CompCalcState_e;$/;"	t	typeref:enum:__anon16	file:
+OPERATOR_DIV	include/CalcOutput.h	34;"	d
+OPERATOR_MUB	include/CalcOutput.h	32;"	d
+OPERATOR_MUL	include/CalcOutput.h	33;"	d
+OPERATOR_PLUS	include/CalcOutput.h	31;"	d
+PF	source/CalcExe.c	20;"	d	file:
+SIMPCALCSTATE_CALCEXE	calc_complex_newstate.si4project/Backup/CalcState(1647).h	/^	SIMPCALCSTATE_CALCEXE,$/;"	e	enum:__anon2
+SIMPCALCSTATE_CALCEXE	calc_complex_newstate.si4project/Backup/CalcState(2605).h	/^	SIMPCALCSTATE_CALCEXE,$/;"	e	enum:__anon6
+SIMPCALCSTATE_CALCEXE	calc_complex_newstate.si4project/Backup/CalcState(2741).h	/^	SIMPCALCSTATE_CALCEXE,$/;"	e	enum:__anon10
+SIMPCALCSTATE_CALCEXE	source/CalcState.c	/^	SIMPCALCSTATE_CALCEXE,$/;"	e	enum:__anon15	file:
+SIMPCALCSTATE_EXIT	calc_complex_newstate.si4project/Backup/CalcState(1647).h	/^	SIMPCALCSTATE_EXIT,$/;"	e	enum:__anon2
+SIMPCALCSTATE_EXIT	calc_complex_newstate.si4project/Backup/CalcState(2605).h	/^	SIMPCALCSTATE_EXIT,$/;"	e	enum:__anon6
+SIMPCALCSTATE_EXIT	calc_complex_newstate.si4project/Backup/CalcState(2741).h	/^	SIMPCALCSTATE_EXIT,$/;"	e	enum:__anon10
+SIMPCALCSTATE_EXIT	source/CalcState.c	/^	SIMPCALCSTATE_EXIT,$/;"	e	enum:__anon15	file:
+SIMPCALCSTATE_INIT	calc_complex_newstate.si4project/Backup/CalcState(1647).h	/^	SIMPCALCSTATE_INIT = 0,$/;"	e	enum:__anon2
+SIMPCALCSTATE_INIT	calc_complex_newstate.si4project/Backup/CalcState(2605).h	/^	SIMPCALCSTATE_INIT = 0,$/;"	e	enum:__anon6
+SIMPCALCSTATE_INIT	calc_complex_newstate.si4project/Backup/CalcState(2741).h	/^	SIMPCALCSTATE_INIT = 0,$/;"	e	enum:__anon10
+SIMPCALCSTATE_INIT	source/CalcState.c	/^	SIMPCALCSTATE_INIT = 0,$/;"	e	enum:__anon15	file:
+SIMPCALCSTATE_INPUT_1ST	calc_complex_newstate.si4project/Backup/CalcState(1647).h	/^	SIMPCALCSTATE_INPUT_1ST,$/;"	e	enum:__anon2
+SIMPCALCSTATE_INPUT_1ST	calc_complex_newstate.si4project/Backup/CalcState(2605).h	/^	SIMPCALCSTATE_INPUT_1ST,$/;"	e	enum:__anon6
+SIMPCALCSTATE_INPUT_1ST	calc_complex_newstate.si4project/Backup/CalcState(2741).h	/^	SIMPCALCSTATE_INPUT_1ST,$/;"	e	enum:__anon10
+SIMPCALCSTATE_INPUT_1ST	source/CalcState.c	/^	SIMPCALCSTATE_INPUT_1ST,$/;"	e	enum:__anon15	file:
+SIMPCALCSTATE_INPUT_2ND	calc_complex_newstate.si4project/Backup/CalcState(1647).h	/^	SIMPCALCSTATE_INPUT_2ND,$/;"	e	enum:__anon2
+SIMPCALCSTATE_INPUT_2ND	calc_complex_newstate.si4project/Backup/CalcState(2605).h	/^	SIMPCALCSTATE_INPUT_2ND,$/;"	e	enum:__anon6
+SIMPCALCSTATE_INPUT_2ND	calc_complex_newstate.si4project/Backup/CalcState(2741).h	/^	SIMPCALCSTATE_INPUT_2ND,$/;"	e	enum:__anon10
+SIMPCALCSTATE_INPUT_2ND	source/CalcState.c	/^	SIMPCALCSTATE_INPUT_2ND,$/;"	e	enum:__anon15	file:
+SIMPCALCSTATE_INPUT_OPERATOR	calc_complex_newstate.si4project/Backup/CalcState(1647).h	/^	SIMPCALCSTATE_INPUT_OPERATOR,$/;"	e	enum:__anon2
+SIMPCALCSTATE_INPUT_OPERATOR	calc_complex_newstate.si4project/Backup/CalcState(2605).h	/^	SIMPCALCSTATE_INPUT_OPERATOR,$/;"	e	enum:__anon6
+SIMPCALCSTATE_INPUT_OPERATOR	calc_complex_newstate.si4project/Backup/CalcState(2741).h	/^	SIMPCALCSTATE_INPUT_OPERATOR,$/;"	e	enum:__anon10
+SIMPCALCSTATE_INPUT_OPERATOR	source/CalcState.c	/^	SIMPCALCSTATE_INPUT_OPERATOR,$/;"	e	enum:__anon15	file:
+SIMPCALCSTATE_INVALID	calc_complex_newstate.si4project/Backup/CalcState(1647).h	/^	SIMPCALCSTATE_INVALID,$/;"	e	enum:__anon2
+SIMPCALCSTATE_INVALID	calc_complex_newstate.si4project/Backup/CalcState(2605).h	/^	SIMPCALCSTATE_INVALID,$/;"	e	enum:__anon6
+SIMPCALCSTATE_INVALID	calc_complex_newstate.si4project/Backup/CalcState(2741).h	/^	SIMPCALCSTATE_INVALID,$/;"	e	enum:__anon10
+SIMPCALCSTATE_INVALID	source/CalcState.c	/^	SIMPCALCSTATE_INVALID,$/;"	e	enum:__anon15	file:
+SIMPCALCSTATE_PRINTRESULT	calc_complex_newstate.si4project/Backup/CalcState(1647).h	/^	SIMPCALCSTATE_PRINTRESULT,$/;"	e	enum:__anon2
+SIMPCALCSTATE_PRINTRESULT	calc_complex_newstate.si4project/Backup/CalcState(2605).h	/^	SIMPCALCSTATE_PRINTRESULT,$/;"	e	enum:__anon6
+SIMPCALCSTATE_PRINTRESULT	calc_complex_newstate.si4project/Backup/CalcState(2741).h	/^	SIMPCALCSTATE_PRINTRESULT,$/;"	e	enum:__anon10
+SIMPCALCSTATE_PRINTRESULT	source/CalcState.c	/^	SIMPCALCSTATE_PRINTRESULT,$/;"	e	enum:__anon15	file:
+SIMPCALCSTATE_WAIT	calc_complex_newstate.si4project/Backup/CalcState(1647).h	/^	SIMPCALCSTATE_WAIT,$/;"	e	enum:__anon2
+SIMPCALCSTATE_WAIT	calc_complex_newstate.si4project/Backup/CalcState(2605).h	/^	SIMPCALCSTATE_WAIT,$/;"	e	enum:__anon6
+SIMPCALCSTATE_WAIT	calc_complex_newstate.si4project/Backup/CalcState(2741).h	/^	SIMPCALCSTATE_WAIT,$/;"	e	enum:__anon10
+SIMPCALCSTATE_WAIT	source/CalcState.c	/^	SIMPCALCSTATE_WAIT,$/;"	e	enum:__anon15	file:
+STUDENT_CEILING	calc_complex_newstate.si4project/Backup/CalcState(404).c	22;"	d	file:
+STUDENT_CEILING	calc_complex_newstate.si4project/Backup/CalcState(48).c	22;"	d	file:
+STUDENT_CEILING	calc_complex_newstate.si4project/Backup/CalcState(548).c	22;"	d	file:
+STUDENT_CEILING	source/CalcState.c	22;"	d	file:
+SimCalState_CalcDone	calc_complex_newstate.si4project/Backup/CalcState(404).c	/^int SimCalState_CalcDone(void)$/;"	f
+SimCalState_CalcDone	calc_complex_newstate.si4project/Backup/CalcState(48).c	/^int SimCalState_CalcDone(int iState)$/;"	f
+SimCalState_CalcDone	calc_complex_newstate.si4project/Backup/CalcState(548).c	/^SimpCalcState_e SimCalState_CalcDone(int iState)$/;"	f
+SimCalState_CalcDone	source/CalcState.c	/^SimpCalcState_e SimCalState_CalcDone(int iState)$/;"	f
+SimCalState_Calculating	calc_complex_newstate.si4project/Backup/CalcState(404).c	/^int SimCalState_Calculating(void)$/;"	f
+SimCalState_Calculating	calc_complex_newstate.si4project/Backup/CalcState(48).c	/^int SimCalState_Calculating(int iState)$/;"	f
+SimCalState_Calculating	calc_complex_newstate.si4project/Backup/CalcState(548).c	/^SimpCalcState_e SimCalState_Calculating(int iState)$/;"	f
+SimCalState_Calculating	source/CalcState.c	/^SimpCalcState_e SimCalState_Calculating(int iState)$/;"	f
+SimCalState_Exit	calc_complex_newstate.si4project/Backup/CalcState(404).c	/^int SimCalState_Exit(void)$/;"	f
+SimCalState_Exit	calc_complex_newstate.si4project/Backup/CalcState(48).c	/^int SimCalState_Exit(int iState)$/;"	f
+SimCalState_Exit	calc_complex_newstate.si4project/Backup/CalcState(548).c	/^SimpCalcState_e SimCalState_Exit(int iState)$/;"	f
+SimCalState_Exit	source/CalcState.c	/^SimpCalcState_e SimCalState_Exit(int iState)$/;"	f
+SimCalState_Input1stNum	calc_complex_newstate.si4project/Backup/CalcState(404).c	/^int SimCalState_Input1stNum(void)$/;"	f
+SimCalState_Input1stNum	calc_complex_newstate.si4project/Backup/CalcState(48).c	/^int SimCalState_Input1stNum(int iState)$/;"	f
+SimCalState_Input1stNum	calc_complex_newstate.si4project/Backup/CalcState(548).c	/^SimpCalcState_e SimCalState_Input1stNum(int iState)$/;"	f
+SimCalState_Input1stNum	source/CalcState.c	/^SimpCalcState_e SimCalState_Input1stNum(int iState)$/;"	f
+SimCalState_Input2stNum	calc_complex_newstate.si4project/Backup/CalcState(404).c	/^int SimCalState_Input2stNum(void)$/;"	f
+SimCalState_Input2stNum	calc_complex_newstate.si4project/Backup/CalcState(48).c	/^int SimCalState_Input2stNum(int iState)$/;"	f
+SimCalState_Input2stNum	calc_complex_newstate.si4project/Backup/CalcState(548).c	/^SimpCalcState_e SimCalState_Input2stNum(int iState)$/;"	f
+SimCalState_Input2stNum	source/CalcState.c	/^SimpCalcState_e SimCalState_Input2stNum(int iState)$/;"	f
+SimCalState_Input_Operator	calc_complex_newstate.si4project/Backup/CalcState(404).c	/^int SimCalState_Input_Operator(void)$/;"	f
+SimCalState_Input_Operator	calc_complex_newstate.si4project/Backup/CalcState(48).c	/^int SimCalState_Input_Operator(int iState)$/;"	f
+SimCalState_Input_Operator	calc_complex_newstate.si4project/Backup/CalcState(548).c	/^SimpCalcState_e SimCalState_Input_Operator(int iState)$/;"	f
+SimCalState_Input_Operator	source/CalcState.c	/^SimpCalcState_e SimCalState_Input_Operator(int iState)$/;"	f
+SimCalState_Wait	calc_complex_newstate.si4project/Backup/CalcState(48).c	/^int SimCalState_Wait(int state)$/;"	f
+SimCalState_Wait	calc_complex_newstate.si4project/Backup/CalcState(548).c	/^SimpCalcState_e SimCalState_Wait(int state)$/;"	f
+SimCalState_Wait	source/CalcState.c	/^SimpCalcState_e SimCalState_Wait(int state)$/;"	f
+SimCalcState_Init	calc_complex_newstate.si4project/Backup/CalcState(404).c	/^int SimCalcState_Init(int state)$/;"	f
+SimCalcState_Init	calc_complex_newstate.si4project/Backup/CalcState(48).c	/^int SimCalcState_Init(int iState)$/;"	f
+SimCalcState_Init	calc_complex_newstate.si4project/Backup/CalcState(548).c	/^SimpCalcState_e SimCalcState_Init(int iState)$/;"	f
+SimCalcState_Init	source/CalcState.c	/^SimpCalcState_e SimCalcState_Init(int iState)$/;"	f
+SimCalcState_Main	calc_complex_newstate.si4project/Backup/CalcState(404).c	/^int SimCalcState_Main(void)$/;"	f
+SimCalcState_Main	calc_complex_newstate.si4project/Backup/CalcState(48).c	/^int SimCalcState_Main(void)$/;"	f
+SimCalcState_Main	calc_complex_newstate.si4project/Backup/CalcState(548).c	/^void SimCalcState_Main(void)$/;"	f
+SimCalcState_Main	source/CalcState.c	/^void SimCalcState_Main(void)$/;"	f
+SimpCalcState_e	calc_complex_newstate.si4project/Backup/CalcState(1647).h	/^} SimpCalcState_e;$/;"	t	typeref:enum:__anon2
+SimpCalcState_e	calc_complex_newstate.si4project/Backup/CalcState(2605).h	/^} SimpCalcState_e;$/;"	t	typeref:enum:__anon6
+SimpCalcState_e	calc_complex_newstate.si4project/Backup/CalcState(2741).h	/^} SimpCalcState_e;$/;"	t	typeref:enum:__anon10
+SimpCalcState_e	source/CalcState.c	/^} SimpCalcState_e;$/;"	t	typeref:enum:__anon15	file:
+StateControl_t	calc_complex_newstate.si4project/Backup/CalcState(1647).h	/^} StateControl_t;$/;"	t	typeref:struct:StateControl_t_
+StateControl_t	calc_complex_newstate.si4project/Backup/CalcState(2605).h	/^} StateControl_t;$/;"	t	typeref:struct:StateControl_t_
+StateControl_t	calc_complex_newstate.si4project/Backup/CalcState(2741).h	/^} StateControl_t;$/;"	t	typeref:struct:StateControl_t_
+StateControl_t	source/CalcState.c	/^} StateControl_t;$/;"	t	typeref:struct:StateControl_t_	file:
+StateControl_t_	calc_complex_newstate.si4project/Backup/CalcState(1647).h	/^typedef struct StateControl_t_ {$/;"	s
+StateControl_t_	calc_complex_newstate.si4project/Backup/CalcState(2605).h	/^typedef struct StateControl_t_ {$/;"	s
+StateControl_t_	calc_complex_newstate.si4project/Backup/CalcState(2741).h	/^typedef struct StateControl_t_ {$/;"	s
+StateControl_t_	source/CalcState.c	/^typedef struct StateControl_t_ {$/;"	s	file:
+Stu_E	calc_complex_newstate.si4project/Backup/CalcState(1647).h	/^}Stu_E;$/;"	t	typeref:struct:__anon4
+Stu_E	calc_complex_newstate.si4project/Backup/CalcState(2605).h	/^}Stu_E;$/;"	t	typeref:struct:__anon8
+Stu_E	calc_complex_newstate.si4project/Backup/CalcState(2741).h	/^}Stu_E;$/;"	t	typeref:struct:__anon12
+Stu_E	include/CalcState.h	/^}Stu_E;$/;"	t	typeref:struct:__anon13
+_CALCEXE_H	include/CalcExe.h	11;"	d
+_CALCINPUT_H	include/CalcInput.h	11;"	d
+_CALCOUTPUT_H	include/CalcOutput.h	11;"	d
+_CALC_COMPLEX_DEBUG_H	include/calc_complex_debug.h	11;"	d
+_CALSTATE_H	calc_complex_newstate.si4project/Backup/CalcState(1647).h	11;"	d
+_CALSTATE_H	calc_complex_newstate.si4project/Backup/CalcState(2605).h	11;"	d
+_CALSTATE_H	calc_complex_newstate.si4project/Backup/CalcState(2741).h	11;"	d
+_CALSTATE_H	include/CalcState.h	11;"	d
+calc_error	include/calc_complex_debug.h	30;"	d
+calc_error	include/calc_complex_debug.h	32;"	d
+calc_printf	include/calc_complex_debug.h	18;"	d
+calc_printf	include/calc_complex_debug.h	20;"	d
+calc_running	include/calc_complex_debug.h	35;"	d
+calc_trace	include/calc_complex_debug.h	24;"	d
+calc_trace	include/calc_complex_debug.h	26;"	d
+g_enRetStatMethodSelState	calc_complex_newstate.si4project/Backup/CalcState(404).c	/^CalState_E g_enRetStatMethodSelState = CALCSTATE_COMPLEX_FAIL; \/*calculator complex mode statistical method of global*\/$/;"	v
+g_enRetStatMethodSelState	calc_complex_newstate.si4project/Backup/CalcState(48).c	/^CalState_E g_enRetStatMethodSelState = CALCSTATE_COMPLEX_FAIL; \/*calculator complex mode statistical method of global*\/$/;"	v
+g_enRetStatMethodSelState	calc_complex_newstate.si4project/Backup/CalcState(548).c	/^CalState_E g_enRetStatMethodSelState = CALCSTATE_COMPLEX_FAIL; \/*calculator complex mode statistical method of global*\/$/;"	v
+g_stCalcState	calc_complex_newstate.si4project/Backup/CalcState(1647).h	/^StateControl_t g_stCalcState = {$/;"	v
+g_stCalcState	calc_complex_newstate.si4project/Backup/CalcState(2605).h	/^StateControl_t g_stCalcState = {$/;"	v
+g_stCalcState	calc_complex_newstate.si4project/Backup/CalcState(2741).h	/^StateControl_t g_stCalcState = {$/;"	v
+g_stCalcState	source/CalcState.c	/^StateControl_t g_stCalcState = {$/;"	v
+g_stCompCalcState	calc_complex_newstate.si4project/Backup/CalcState(1647).h	/^StateControl_t g_stCompCalcState = {$/;"	v
+g_stCompCalcState	calc_complex_newstate.si4project/Backup/CalcState(2605).h	/^StateControl_t g_stCompCalcState = {$/;"	v
+g_stCompCalcState	calc_complex_newstate.si4project/Backup/CalcState(2741).h	/^StateControl_t g_stCompCalcState = {$/;"	v
+g_stCompCalcState	source/CalcState.c	/^StateControl_t g_stCompCalcState = {$/;"	v
+g_stSimpCalcState	calc_complex_newstate.si4project/Backup/CalcState(1647).h	/^StateControl_t g_stSimpCalcState = {$/;"	v
+g_stSimpCalcState	calc_complex_newstate.si4project/Backup/CalcState(2605).h	/^StateControl_t g_stSimpCalcState = {$/;"	v
+g_stSimpCalcState	calc_complex_newstate.si4project/Backup/CalcState(2741).h	/^StateControl_t g_stSimpCalcState = {$/;"	v
+g_stSimpCalcState	source/CalcState.c	/^StateControl_t g_stSimpCalcState = {$/;"	v
+gbAverageInfoReady	calc_complex_newstate.si4project/Backup/CalcState(404).c	/^bool gbAverageInfoReady = false;                    \/*judge the average is calculator*\/$/;"	v
+gbAverageInfoReady	calc_complex_newstate.si4project/Backup/CalcState(48).c	/^bool gbAverageInfoReady = false;                    \/*judge the average is calculator*\/$/;"	v
+gbAverageInfoReady	calc_complex_newstate.si4project/Backup/CalcState(548).c	/^bool gbAverageInfoReady = false;                    \/*judge the average is calculator*\/$/;"	v
+gbAverageInfoReady	source/CalcState.c	/^bool gbAverageInfoReady = false;                    \/*judge the average is calculator*\/$/;"	v
+gbVarianceInfoReady	calc_complex_newstate.si4project/Backup/CalcState(404).c	/^bool gbVarianceInfoReady = false;$/;"	v
+gbVarianceInfoReady	calc_complex_newstate.si4project/Backup/CalcState(48).c	/^bool gbVarianceInfoReady = false;$/;"	v
+gbVarianceInfoReady	calc_complex_newstate.si4project/Backup/CalcState(548).c	/^bool gbVarianceInfoReady = false;$/;"	v
+gbVarianceInfoReady	source/CalcState.c	/^bool gbVarianceInfoReady = false;$/;"	v
+gcOperator	calc_complex_newstate.si4project/Backup/CalcState(404).c	/^char gcOperator = '\\0';				   	   			\/*calculator simple mode operator char global*\/$/;"	v
+gcOperator	calc_complex_newstate.si4project/Backup/CalcState(48).c	/^char gcOperator = '\\0';				   	   			\/*calculator simple mode operator char global*\/$/;"	v
+gcOperator	calc_complex_newstate.si4project/Backup/CalcState(548).c	/^char gcOperator = '\\0';				   	   			\/*calculator simple mode operator char global*\/$/;"	v
+gcOperator	source/CalcState.c	/^char gcOperator = '\\0';				   	   			\/*calculator simple mode operator char global*\/$/;"	v
+gcSelectMode	calc_complex_newstate.si4project/Backup/CalcState(404).c	/^char gcSelectMode = '\\0';                           $/;"	v
+gcSelectMode	calc_complex_newstate.si4project/Backup/CalcState(48).c	/^char gcSelectMode = '\\0';                           $/;"	v
+gcSelectMode	calc_complex_newstate.si4project/Backup/CalcState(548).c	/^char gcSelectMode = '\\0';                           $/;"	v
+gcSelectMode	source/CalcState.c	/^char gcSelectMode = '\\0';                           $/;"	v
+gcStuName	calc_complex_newstate.si4project/Backup/CalcState(1647).h	/^	char gcStuName[128];                        \/*calculator complex mode student name string global*\/$/;"	m	struct:__anon4
+gcStuName	calc_complex_newstate.si4project/Backup/CalcState(2605).h	/^	char gcStuName[128];                        \/*calculator complex mode student name string global*\/$/;"	m	struct:__anon8
+gcStuName	calc_complex_newstate.si4project/Backup/CalcState(2741).h	/^	char gcStuName[128];                        \/*calculator complex mode student name string global*\/$/;"	m	struct:__anon12
+gcStuName	include/CalcState.h	/^	char gcStuName[128];                            \/*calculator complex mode student name string global*\/$/;"	m	struct:__anon13
+gdChineseScoreAverage	calc_complex_newstate.si4project/Backup/CalcState(404).c	/^double gdChineseScoreAverage = 0.0;					\/*the average of chinese*\/$/;"	v
+gdChineseScoreAverage	calc_complex_newstate.si4project/Backup/CalcState(48).c	/^double gdChineseScoreAverage = 0.0;					\/*the average of chinese*\/$/;"	v
+gdChineseScoreAverage	calc_complex_newstate.si4project/Backup/CalcState(548).c	/^double gdChineseScoreAverage = 0.0;					\/*the average of chinese*\/$/;"	v
+gdChineseScoreAverage	source/CalcState.c	/^double gdChineseScoreAverage = 0.0;					\/*the average of chinese*\/$/;"	v
+gdChineseScoreVariance	calc_complex_newstate.si4project/Backup/CalcState(404).c	/^double gdChineseScoreVariance = 0.0;				\/*the variance of chinese*\/$/;"	v
+gdChineseScoreVariance	calc_complex_newstate.si4project/Backup/CalcState(48).c	/^double gdChineseScoreVariance = 0.0;				\/*the variance of chinese*\/$/;"	v
+gdChineseScoreVariance	calc_complex_newstate.si4project/Backup/CalcState(548).c	/^double gdChineseScoreVariance = 0.0;				\/*the variance of chinese*\/$/;"	v
+gdChineseScoreVariance	source/CalcState.c	/^double gdChineseScoreVariance = 0.0;				\/*the variance of chinese*\/$/;"	v
+gdEnglishScoreAverage	calc_complex_newstate.si4project/Backup/CalcState(404).c	/^double gdEnglishScoreAverage = 0.0;$/;"	v
+gdEnglishScoreAverage	calc_complex_newstate.si4project/Backup/CalcState(48).c	/^double gdEnglishScoreAverage = 0.0;$/;"	v
+gdEnglishScoreAverage	calc_complex_newstate.si4project/Backup/CalcState(548).c	/^double gdEnglishScoreAverage = 0.0;$/;"	v
+gdEnglishScoreAverage	source/CalcState.c	/^double gdEnglishScoreAverage = 0.0;$/;"	v
+gdEnglishScoreVariance	calc_complex_newstate.si4project/Backup/CalcState(404).c	/^double gdEnglishScoreVariance = 0.0;$/;"	v
+gdEnglishScoreVariance	calc_complex_newstate.si4project/Backup/CalcState(48).c	/^double gdEnglishScoreVariance = 0.0;$/;"	v
+gdEnglishScoreVariance	calc_complex_newstate.si4project/Backup/CalcState(548).c	/^double gdEnglishScoreVariance = 0.0;$/;"	v
+gdEnglishScoreVariance	source/CalcState.c	/^double gdEnglishScoreVariance = 0.0;$/;"	v
+gdMathScoreAverage	calc_complex_newstate.si4project/Backup/CalcState(404).c	/^double gdMathScoreAverage = 0.0;$/;"	v
+gdMathScoreAverage	calc_complex_newstate.si4project/Backup/CalcState(48).c	/^double gdMathScoreAverage = 0.0;$/;"	v
+gdMathScoreAverage	calc_complex_newstate.si4project/Backup/CalcState(548).c	/^double gdMathScoreAverage = 0.0;$/;"	v
+gdMathScoreAverage	source/CalcState.c	/^double gdMathScoreAverage = 0.0;$/;"	v
+gdMathScoreVariance	calc_complex_newstate.si4project/Backup/CalcState(404).c	/^double gdMathScoreVariance = 0.0;$/;"	v
+gdMathScoreVariance	calc_complex_newstate.si4project/Backup/CalcState(48).c	/^double gdMathScoreVariance = 0.0;$/;"	v
+gdMathScoreVariance	calc_complex_newstate.si4project/Backup/CalcState(548).c	/^double gdMathScoreVariance = 0.0;$/;"	v
+gdMathScoreVariance	source/CalcState.c	/^double gdMathScoreVariance = 0.0;$/;"	v
+gstStu_a	calc_complex_newstate.si4project/Backup/CalcState(404).c	/^Stu_E gstStu_a[STUDENT_CEILING];				    \/*calculator complex mode student information array global*\/$/;"	v
+gstStu_a	calc_complex_newstate.si4project/Backup/CalcState(48).c	/^Stu_E gstStu_a[STUDENT_CEILING];				    \/*calculator complex mode student information array global*\/$/;"	v
+gstStu_a	calc_complex_newstate.si4project/Backup/CalcState(548).c	/^Stu_E gstStu_a[STUDENT_CEILING];				    \/*calculator complex mode student information array global*\/$/;"	v
+gstStu_a	source/CalcState.c	/^Stu_E gstStu_a[STUDENT_CEILING];				    \/*calculator complex mode student information array global*\/$/;"	v
+gui1stNum	calc_complex_newstate.si4project/Backup/CalcState(404).c	/^unsigned int gui1stNum = 0;                			\/*calculator simple mode 1st number global*\/$/;"	v
+gui1stNum	calc_complex_newstate.si4project/Backup/CalcState(48).c	/^unsigned int gui1stNum = 0;                			\/*calculator simple mode 1st number global*\/$/;"	v
+gui1stNum	calc_complex_newstate.si4project/Backup/CalcState(548).c	/^unsigned int gui1stNum = 0;                			\/*calculator simple mode 1st number global*\/$/;"	v
+gui1stNum	source/CalcState.c	/^unsigned int gui1stNum = 0;                			\/*calculator simple mode 1st number global*\/$/;"	v
+gui2ndNum	calc_complex_newstate.si4project/Backup/CalcState(404).c	/^unsigned int gui2ndNum = 0;				   			\/*calculator simple mode 2nd number globol*\/$/;"	v
+gui2ndNum	calc_complex_newstate.si4project/Backup/CalcState(48).c	/^unsigned int gui2ndNum = 0;				   			\/*calculator simple mode 2nd number globol*\/$/;"	v
+gui2ndNum	calc_complex_newstate.si4project/Backup/CalcState(548).c	/^unsigned int gui2ndNum = 0;				   			\/*calculator simple mode 2nd number globol*\/$/;"	v
+gui2ndNum	source/CalcState.c	/^unsigned int gui2ndNum = 0;				   			\/*calculator simple mode 2nd number globol*\/$/;"	v
+guiResult	calc_complex_newstate.si4project/Backup/CalcState(404).c	/^unsigned int guiResult = 0;				   			\/*calculator simple mode operating result global*\/$/;"	v
+guiResult	calc_complex_newstate.si4project/Backup/CalcState(48).c	/^unsigned int guiResult = 0;				   			\/*calculator simple mode operating result global*\/$/;"	v
+guiResult	calc_complex_newstate.si4project/Backup/CalcState(548).c	/^unsigned int guiResult = 0;				   			\/*calculator simple mode operating result global*\/$/;"	v
+guiResult	source/CalcState.c	/^unsigned int guiResult = 0;				   			\/*calculator simple mode operating result global*\/$/;"	v
+guiStuNumCount	calc_complex_newstate.si4project/Backup/CalcState(404).c	/^unsigned int guiStuNumCount = 0;					\/*student numbers count global*\/$/;"	v
+guiStuNumCount	calc_complex_newstate.si4project/Backup/CalcState(48).c	/^unsigned int guiStuNumCount = 0;					\/*student numbers count global*\/$/;"	v
+guiStuNumCount	calc_complex_newstate.si4project/Backup/CalcState(548).c	/^unsigned int guiStuNumCount = 0;					\/*student numbers count global*\/$/;"	v
+guiStuNumCount	source/CalcState.c	/^unsigned int guiStuNumCount = 0;					\/*student numbers count global*\/$/;"	v
+iCurState	calc_complex_newstate.si4project/Backup/CalcState(1647).h	/^	int iCurState;$/;"	m	struct:StateControl_t_
+iCurState	calc_complex_newstate.si4project/Backup/CalcState(2605).h	/^	int iCurState;$/;"	m	struct:StateControl_t_
+iCurState	calc_complex_newstate.si4project/Backup/CalcState(2741).h	/^	int iCurState;$/;"	m	struct:StateControl_t_
+iCurState	source/CalcState.c	/^	int iCurState;$/;"	m	struct:StateControl_t_	file:
+main	calc_complex_newstate.si4project/Backup/calc_complex_YHD(7584).c	/^int main(int argc, char *argv[])$/;"	f
+main	source/calc_complex_YHD.c	/^int main(int argc, char *argv[])$/;"	f
+object	Makefile	/^object = .\/obj\/CalcState.o .\/obj\/calc_complex_YHD.o .\/obj\/CalcInput.o .\/obj\/CalcExe.o .\/obj\/CalcOutput.o$/;"	m
+pfDoCurState	calc_complex_newstate.si4project/Backup/CalcState(1647).h	/^	int (* pfDoCurState[])(int iState);$/;"	m	struct:StateControl_t_
+pfDoCurState	calc_complex_newstate.si4project/Backup/CalcState(2605).h	/^	int (* pfDoCurState[])(int iState);$/;"	m	struct:StateControl_t_
+pfDoCurState	calc_complex_newstate.si4project/Backup/CalcState(2741).h	/^	int (* pfDoCurState[])(int state);$/;"	m	struct:StateControl_t_
+pfDoCurState	source/CalcState.c	/^	int (* pfDoCurState[])(int iState);$/;"	m	struct:StateControl_t_	file:
+target	Makefile	/^target = .\/bin\/calc_complex_YHD $/;"	m
+uiChineseScore	calc_complex_newstate.si4project/Backup/CalcState(1647).h	/^	unsigned int uiChineseScore;					\/*calculator complex mode student  Chinese Score global*\/$/;"	m	struct:__anon4
+uiChineseScore	calc_complex_newstate.si4project/Backup/CalcState(2605).h	/^	unsigned int uiChineseScore;					\/*calculator complex mode student  Chinese Score global*\/$/;"	m	struct:__anon8
+uiChineseScore	calc_complex_newstate.si4project/Backup/CalcState(2741).h	/^	unsigned int uiChineseScore;					\/*calculator complex mode student  Chinese Score global*\/$/;"	m	struct:__anon12
+uiChineseScore	include/CalcState.h	/^	unsigned int uiChineseScore;					\/*calculator complex mode student  Chinese Score global*\/$/;"	m	struct:__anon13
+uiEnglishScore	calc_complex_newstate.si4project/Backup/CalcState(1647).h	/^	unsigned int uiEnglishScore;					\/*calculator complex mode student  English  Score global*\/$/;"	m	struct:__anon4
+uiEnglishScore	calc_complex_newstate.si4project/Backup/CalcState(2605).h	/^	unsigned int uiEnglishScore;					\/*calculator complex mode student  English  Score global*\/$/;"	m	struct:__anon8
+uiEnglishScore	calc_complex_newstate.si4project/Backup/CalcState(2741).h	/^	unsigned int uiEnglishScore;					\/*calculator complex mode student  English  Score global*\/$/;"	m	struct:__anon12
+uiEnglishScore	include/CalcState.h	/^	unsigned int uiEnglishScore;					\/*calculator complex mode student  English  Score global*\/$/;"	m	struct:__anon13
+uiMathScore	calc_complex_newstate.si4project/Backup/CalcState(1647).h	/^	unsigned int uiMathScore;						\/*calculator complex mode student  Math  Score global*\/$/;"	m	struct:__anon4
+uiMathScore	calc_complex_newstate.si4project/Backup/CalcState(2605).h	/^	unsigned int uiMathScore;						\/*calculator complex mode student  Math  Score global*\/$/;"	m	struct:__anon8
+uiMathScore	calc_complex_newstate.si4project/Backup/CalcState(2741).h	/^	unsigned int uiMathScore;						\/*calculator complex mode student  Math  Score global*\/$/;"	m	struct:__anon12
+uiMathScore	include/CalcState.h	/^	unsigned int uiMathScore;						\/*calculator complex mode student  Math  Score global*\/$/;"	m	struct:__anon13
