@@ -2,7 +2,7 @@
 *   Copyright (C) 2017 All rights reserved.
 *
 *   Filename:CalcInput.h
-*   Author  :叶鸿达
+*   Author  :yhd
 *   Date    :2017-04-30
 *   Describe:
 *

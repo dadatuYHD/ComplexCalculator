@@ -141,9 +141,9 @@ StateControl_t g_stCompCalcState = {
                                 
 /************************************************************
  * FUNCTION:CalcState_Maint()
- * Description:该函数主要用来进行主状态机的控制
- * Arguments:无
- * return:无返回值
+ * Description:Main state machine control
+ * Arguments:void
+ * return:void
  * *********************************************************/
 void CalcState_Main(void)
 {
@@ -151,15 +151,18 @@ void CalcState_Main(void)
     {
         g_stCalcState.iCurState = g_stCalcState.pfDoCurState[g_stCalcState.iCurState](g_stCalcState.iCurState);
     };
+	
     g_stCalcState.iCurState = CALCSTATE_INIT;
 }
 
 
 /************************************************************
  * FUNCTION:CalState_Init()
- * Description:该函数主要用来初始化主状态机的初始状态
- * Arguments[iState][In]:进行状态与执行函数的对应关系检查
- * return:
+ * Description          :Initialize the initial state of the 
+ *                       main state machine
+ * Arguments[iState][In]:Check the correspondence between 
+                         status and execution function
+ * return               :next state
  * *********************************************************/
 int CalcState_Init(int iState)
 {
@@ -172,10 +175,10 @@ int CalcState_Init(int iState)
     int iRet = DATACENTER_RET_OK;
 
     /*create StateMacMajorModeSelCreate DataCenter*/
-    iRet = DataCenter_StateMacMajorModeSelCreateDataCenter();
+    iRet = DataCenter_CreateCalcMode();
     if (iRet == DATACENTER_RET_FAIL)
     {
-        calc_error("[%s]DataCenter_StateMacMajorModeSelCreateDataCenter is fail!\n", __FUNCTION__);
+        calc_error("[%s]DataCenter_CreateCalcMode is fail!\n", __FUNCTION__);
         return CALCSTATE_INIT;
     }
     
@@ -183,10 +186,11 @@ int CalcState_Init(int iState)
 }
 
 /************************************************************
- * FUNCTION:CalState_UserModeSelect()
- * Description:该函数主要用来进行计算器工作模式的选取
- * Arguments[iState][In]:进行状态与执行函数的对应关系检查
- * return:主状态机的下一次状态
+ * FUNCTION             :CalState_UserModeSelect()
+ * Description          :Calculator working mode selection
+ * Arguments[iState][In]:Check the correspondence between 
+ *                       status and execution function
+ * return               :next state
  * *********************************************************/
 int CalState_UserModeSelect(int iState)
 {
@@ -208,11 +212,11 @@ int CalState_UserModeSelect(int iState)
         return CALCSTATE_MODESELECT;
     }
 
-    /*write SelectMode to datacenter to save*/
-    iRet = DataCenter_WriteStateMacMajorModeSel(&cSelectMode, DATA_SELECTMODE_DEFAULT);
+    /*write SelectMode data to datacenter for save*/
+    iRet = DataCenter_SetCalcMode(&cSelectMode, DATA_SELECTMODE_DEFAULT);
     if (iRet == DATACENTER_RET_FAIL)
     {
-        calc_error("[%s]DataCenter_WriteStateMacMajorModeSel is fail!\n", __FUNCTION__);   
+        calc_error("[%s]DataCenter_SetCalcMode is fail!\n", __FUNCTION__);   
         return CALCSTATE_RET_FAIL;
     }
     
@@ -220,10 +224,12 @@ int CalState_UserModeSelect(int iState)
 }
 
 /************************************************************
- * FUNCTION:CalcState_Running()
- * Description:该函数主要用来执行计算机相应的工作模式
- * Arguments[iState][In]:进行状态与执行函数的对应关系检查
- * return:主状态机的下一次状态
+ * FUNCTION             :CalcState_Running()
+ * Description          :Execute the corresponding working 
+ *                       mode of the calculator
+ * Arguments[iState][In]:Check the correspondence between 
+ *                       status and execution function
+ * return               :next state
  * *********************************************************/
 int CalcState_Running(int iState)
 {
@@ -237,10 +243,10 @@ int CalcState_Running(int iState)
     char cSelectMode = '\0';
 
     /*read SelectMode from datacenter*/
-    iRet = DataCenter_ReadStateMacMajorModeSel(&cSelectMode, DATA_SELECTMODE_DEFAULT);
+    iRet = DataCenter_GetCalcMode(&cSelectMode, DATA_SELECTMODE_DEFAULT);
     if (iRet == DATACENTER_RET_FAIL)
     {
-        calc_error("[%s]DataCenter_ReadStateMacMajorModeSel is fail!\n", __FUNCTION__);   
+        calc_error("[%s]DataCenter_GetCalcMode is fail!\n", __FUNCTION__);   
         return CALCSTATE_RET_FAIL;
     }
 
@@ -266,11 +272,12 @@ int CalcState_Running(int iState)
 }
 
 /************************************************************
- * FUNCTION:CalcState_Wait()
- * Description:该函数跳转到exit状态
- * Arguments[iState][In]:进行状态与执行函数的对应关系检查
- * return:主状态机的下一次状态
- * *********************************************************/
+ * FUNCTION             :CalcState_Wait()
+ * Description          :Jump to exit state
+ * Arguments[iState][In]:Check the correspondence between 
+ *                       status and execution function
+ * return               :next state
+ ***********************************************************/
 int CalcState_Wait(int iState)
 {
     if (iState != CALCSTATE_WAIT)
@@ -283,10 +290,11 @@ int CalcState_Wait(int iState)
 }
 
 /************************************************************
- * FUNCTION:CalcState_Exit()
- * Description:该函数返回计算器工作模式的选取
- * Arguments[iState][In]:进行状态与执行函数的对应关系检查
- * return:主状态机的下一次状态
+ * FUNCTION             :CalcState_Exit()
+ * Description          :jump to the CALCSTATE_INIT state
+ * Arguments[iState][In]:Check the correspondence between 
+ *                       status and execution function
+ * return               :next state
  * *********************************************************/
  int CalcState_Exit(int iState)
 {
@@ -299,10 +307,10 @@ int CalcState_Wait(int iState)
     int iRet = DATACENTER_RET_OK;
 
     /*create StateMacMajorModeSelCreate DataCenter*/
-    iRet = DataCenter_StateMacMajorModeSelDestoryDataCenter();
+    iRet = DataCenter_DestoryCalcMode();
     if (iRet == DATACENTER_RET_FAIL)
     {
-        calc_error("[%s]DataCenter_StateMacMajorModeSelDestoryDataCenter is fail!\n", __FUNCTION__);
+        calc_error("[%s]DataCenter_DestoryCalcMode is fail!\n", __FUNCTION__);
         return CALCSTATE_EXIT;
     }
 
@@ -311,10 +319,11 @@ int CalcState_Wait(int iState)
 
 
 /************************************************************
- * FUNCTION:CalcState_SimpleMode()
- * Description:计算器工作在简单模式下的状态机控制
- * Arguments:无
- * return:无
+ * FUNCTION   :CalcState_SimpleMode()
+ * Description:The main state machine control of the 
+ *             calculator working in simple mode
+ * Arguments  :void
+ * return     :void
  * *********************************************************/
 void SimCalcState_Main(void)
 {
@@ -326,10 +335,12 @@ void SimCalcState_Main(void)
 }
 
 /************************************************************
- * FUNCTION:SimCalcState_Init()
- * Description:该函数用来进行计算器简单模式状态初始化
- * Arguments[iState][In]:进行状态与执行函数的对应关系检查
- * return:计算器简单模式状态机的下一次状态
+ * FUNCTION             :SimCalcState_Init()
+ * Description          :Calculator simple mode state 
+ *                       initialization
+ * Arguments[iState][In]:Check the correspondence between 
+ *                       status and execution function
+ * return               :next state
  * *********************************************************/
 int SimCalcState_Init(int iState)
 {
@@ -341,10 +352,10 @@ int SimCalcState_Init(int iState)
 
     int iRet = DATACENTER_RET_OK;
     
-    iRet = DataCenter_CalcSimModeOperandCreateDataCenter();
+    iRet = DataCenter_CreateSimCalcOper();
     if (iRet == DATACENTER_RET_FAIL)
     {
-        calc_error("[%s]DataCenter_CalcSimModeOperandCreateDataCenter is fail!\n", __FUNCTION__);
+        calc_error("[%s]DataCenter_CreateSimCalcOper is fail!\n", __FUNCTION__);
         return SIMPCALCSTATE_INIT;
     }   
 
@@ -353,10 +364,11 @@ int SimCalcState_Init(int iState)
 }
 
 /************************************************************
- * FUNCTION:SimCalState_Input1stNum()
- * Description:该函数是状态机中的对第一个数字接受并且处理的动作函数
- * Arguments[iState][In]:进行状态与执行函数的对应关系检查
- * return:计算器简单模式状态机的下一次状态
+ * FUNCTION             :SimCalState_Input1stNum()
+ * Description          :Accept and process the first number
+ * Arguments[iState][In]:Check the correspondence between 
+ *                       status and execution function
+ * return               :next state
  * *********************************************************/
 int SimCalState_Input1stNum(int iState)
 {
@@ -378,10 +390,10 @@ int SimCalState_Input1stNum(int iState)
         /*save the 1stNum to the datacenter*/
         memset(&stSimModeCalcOperand, 0, sizeof(stSimModeCalcOperand));
         stSimModeCalcOperand.gui1stNum = iInputInt;
-        iRet = DataCenter_WriteCalcSimModeOperand(stSimModeCalcOperand, DATA_CALCSIMPLE_WRITE_1STNUM);
+        iRet = DataCenter_SetSimCalcOper(stSimModeCalcOperand, DATA_CALCSIMPLE_WRITE_1STNUM);
         if (iRet == DATACENTER_RET_FAIL)
         {
-            calc_error("[%s]DataCenter_WriteCalcSimModeOperand is fail!\n", __FUNCTION__);
+            calc_error("[%s]DataCenter_SetSimCalcOper is fail!\n", __FUNCTION__);
             return SIMPCALCSTATE_INPUT_1ST;
         }
         return SIMPCALCSTATE_INPUT_OPERATOR;
@@ -404,10 +416,11 @@ int SimCalState_Input1stNum(int iState)
 }
 
 /************************************************************
- * FUNCTION:SimCalState_Operator()
- * Description:该函数是状态机中的对操作符接受并且处理的动作函数
- * Arguments[iState][In]:进行状态与执行函数的对应关系检查
- * return:计算器简单模式状态机的下一次状态
+ * FUNCTION             :SimCalState_Operator()
+ * Description          :Accept and process the Operator
+ * Arguments[iState][In]:Check the correspondence between 
+ *                       status and execution function
+ * return               :next state
  * *********************************************************/
 int SimCalState_Input_Operator(int iState)
 {
@@ -432,10 +445,10 @@ int SimCalState_Input_Operator(int iState)
             /*save the operator to the datacenter*/
             memset(&stSimModeCalcOperand, 0, sizeof(stSimModeCalcOperand));
             stSimModeCalcOperand.gcOperator = cOperator;
-            iRet = DataCenter_WriteCalcSimModeOperand(stSimModeCalcOperand, DATA_CALCSIMPLE_WRITE_OPERATOR);
+            iRet = DataCenter_SetSimCalcOper(stSimModeCalcOperand, DATA_CALCSIMPLE_WRITE_OPERATOR);
             if (iRet == DATACENTER_RET_FAIL)
             {
-                calc_error("[%s]DataCenter_WriteCalcSimModeOperand is fail!\n", __FUNCTION__);
+                calc_error("[%s]DataCenter_SetSimCalcOper is fail!\n", __FUNCTION__);
                 return SIMPCALCSTATE_INPUT_OPERATOR;
             }
             return SIMPCALCSTATE_INPUT_2ND;
@@ -455,10 +468,11 @@ int SimCalState_Input_Operator(int iState)
 
 
 /************************************************************
- * FUNCTION:SimCalState_Input2stNum()
- * Description:该函数是状态机中的对第二个数字接受并且处理的动作函数
- * Arguments[iState][In]:进行状态与执行函数的对应关系检查
- * return:计算器简单模式状态机的下一次状态
+ * FUNCTION             :SimCalState_Input2stNum()
+ * Description          :Accept and process the second number
+ * Arguments[iState][In]:Check the correspondence between 
+ *                       status and execution function
+ * return               :next state
  * *********************************************************/
 int SimCalState_Input2stNum(int iState)
 {
@@ -480,10 +494,10 @@ int SimCalState_Input2stNum(int iState)
         /*save the 2ndNum to the datacenter*/
         memset(&stSimModeCalcOperand, 0, sizeof(stSimModeCalcOperand));
         stSimModeCalcOperand.gui2ndNum = iInputInt;
-        iRet = DataCenter_WriteCalcSimModeOperand(stSimModeCalcOperand, DATA_CALCSIMPLE_WRITE_2NDNUM);
+        iRet = DataCenter_SetSimCalcOper(stSimModeCalcOperand, DATA_CALCSIMPLE_WRITE_2NDNUM);
         if (iRet == DATACENTER_RET_FAIL)
         {
-            calc_error("[%s]DataCenter_WriteCalcSimModeOperand is fail!\n", __FUNCTION__);
+            calc_error("[%s]DataCenter_SetSimCalcOper is fail!\n", __FUNCTION__);
             return SIMPCALCSTATE_INPUT_2ND;
         }
         return SIMPCALCSTATE_CALCEXE;
@@ -506,10 +520,11 @@ int SimCalState_Input2stNum(int iState)
 }
 
 /************************************************************
- * FUNCTION:SimCalState_Calculating()
- * Description:该函数是状态机中进行计算的动作函数
- * Arguments[iState][In]:进行状态与执行函数的对应关系检查
- * return:计算器简单模式状态机的下一次状态
+ * FUNCTION             :SimCalState_Calculating()
+ * Description          :Action function for calculation
+ * Arguments[iState][In]:Check the correspondence between 
+ *                       status and execution function
+ * return               :next state
  * *********************************************************/
 int SimCalState_Calculating(int iState)
 {
@@ -525,10 +540,10 @@ int SimCalState_Calculating(int iState)
 
     /*read the SimModeCalcOperand from the datacenter*/
     memset(&stSimModeCalcOperand, 0, sizeof(stSimModeCalcOperand));
-    iRet = DataCenter_ReadCalcSimModeOperand(&stSimModeCalcOperand, DATA_CALCSIMPLE_DEFAULT);
+    iRet = DataCenter_GetCalcSimOper(&stSimModeCalcOperand, DATA_CALCSIMPLE_DEFAULT);
     if (iRet == DATACENTER_RET_FAIL)
     {
-        calc_error("[%s]DataCenter_ReadCalcSimModeOperand is fail!\n", __FUNCTION__);
+        calc_error("[%s]DataCenter_GetCalcSimOper is fail!\n", __FUNCTION__);
         return SIMPCALCSTATE_CALCEXE;
     }
 
@@ -565,10 +580,10 @@ int SimCalState_Calculating(int iState)
     if (iRet == CALCSTATE_RET_OK)
     {
         /*save the result to the datacenter*/
-        iRet = DataCenter_WriteCalcSimModeOperand(stSimModeCalcOperand, DATA_CALCSIMPLE_WRITE_RESULT);
+        iRet = DataCenter_SetSimCalcOper(stSimModeCalcOperand, DATA_CALCSIMPLE_WRITE_RESULT);
         if (iRet == DATACENTER_RET_FAIL)
         {
-            calc_error("[%s]DataCenter_WriteCalcSimModeOperand is fail!\n", __FUNCTION__);
+            calc_error("[%s]DataCenter_SetSimCalcOper is fail!\n", __FUNCTION__);
             return SIMPCALCSTATE_CALCEXE;
         }
     
@@ -592,10 +607,11 @@ int SimCalState_Calculating(int iState)
 }
 
 /************************************************************
- * FUNCTION:SimCalState_CalcDone()
- * Description:该函数是状态机中计算完毕后动作函数
- * Arguments[iState][In]:进行状态与执行函数的对应关系检查
- * return:计算器简单模式状态机的下一次状态
+ * FUNCTION             :SimCalState_CalcDone()
+ * Description          :Action function after calculation
+ * Arguments[iState][In]:Check the correspondence between 
+ *                       status and execution function
+ * return               :next state
  * *********************************************************/
 int SimCalState_CalcDone(int iState)
 {
@@ -611,10 +627,10 @@ int SimCalState_CalcDone(int iState)
 
     /*read the SimModeCalcOperand from the datacenter*/
     memset(&stSimModeCalcOperand, 0, sizeof(stSimModeCalcOperand));
-    iRet = DataCenter_ReadCalcSimModeOperand(&stSimModeCalcOperand, DATA_CALCSIMPLE_DEFAULT);
+    iRet = DataCenter_GetCalcSimOper(&stSimModeCalcOperand, DATA_CALCSIMPLE_DEFAULT);
     if (iRet == DATACENTER_RET_FAIL)
     {
-        calc_error("[%s]DataCenter_ReadCalcSimModeOperand is fail!\n", __FUNCTION__);
+        calc_error("[%s]DataCenter_GetCalcSimOper is fail!\n", __FUNCTION__);
         return SIMPCALCSTATE_CALCEXE;
     }
 
@@ -643,10 +659,11 @@ int SimCalState_CalcDone(int iState)
 }
 
 /************************************************************
- * FUNCTION:SimCalState_Wait()
- * Description:该函数用来转移到下一个退出状态
- * Arguments[iState][In]:进行状态与执行函数的对应关系检查
- * return:计算器简单模式状态机的下一次状态
+ * FUNCTION             :SimCalState_Wait()
+ * Description          :Move to the next exit state
+ * Arguments[iState][In]:Check the correspondence between 
+ *                       status and execution function
+ * return               :next state
  * *********************************************************/
 int SimCalState_Wait(int iState)
 {
@@ -660,10 +677,11 @@ int SimCalState_Wait(int iState)
 }
 
 /************************************************************
- * FUNCTION:SimCalState_Exit()
- * Description:该函数用来退出简单模式
- * Arguments[iState][In]:进行状态与执行函数的对应关系检查
- * return:计算器简单模式状态机的下一次状态
+ * FUNCTION             :SimCalState_Exit()
+ * Description          :Exit simple mode
+ * Arguments[iState][In]:Check the correspondence between 
+ *                       status and execution function
+ * return               :next state
  * *********************************************************/
 int SimCalState_Exit(int iState)
 {
@@ -674,10 +692,10 @@ int SimCalState_Exit(int iState)
     }
     int iRet = DATACENTER_RET_OK;
     
-    iRet = DataCenter_CalcSimModeOperandDestoryDataCenter();
+    iRet = DataCenter_DestoryCalcSimOper();
     if (iRet == DATACENTER_RET_FAIL)
     {
-        calc_error("[%s]DataCenter_CalcSimModeOperandDestoryDataCenter is fail!\n", __FUNCTION__);
+        calc_error("[%s]DataCenter_DestoryCalcSimOper is fail!\n", __FUNCTION__);
         return SIMPCALCSTATE_EXIT;
     }
 
@@ -685,10 +703,11 @@ int SimCalState_Exit(int iState)
 }
 
 /************************************************************
- * FUNCTION:ComCalcState_ComplexMode()
- * Description:计算器工作在复杂模式下状态机控制
- * Arguments:无
- * return:无返回值
+ * FUNCTION   :ComCalcState_ComplexMode()
+ * Description:State machine control of calculator working 
+ *             in complex mode
+ * Arguments  :void
+ * return     :void
  * *********************************************************/
 void CompCalcState_Main(void)
 {
@@ -700,10 +719,12 @@ void CompCalcState_Main(void)
 }
 
 /************************************************************
- * FUNCTION:ComCalcState_Init()
- * Description:该函数用来对计算机复杂模式状态机初始状态进行初始化
- * Arguments[iState][In]:进行状态与执行函数的对应关系检查
- * return:计算器复杂模式状态机的下一次状态
+ * FUNCTION             :ComCalcState_Init()
+ * Description          :Calculator complex mode state 
+ *                       initialization
+ * Arguments[iState][In]:Check the correspondence between 
+ *                       status and execution function
+ * return               :next state
  * *********************************************************/
 int ComCalcState_Init(int state)
 {
@@ -715,24 +736,25 @@ int ComCalcState_Init(int state)
 
     int iRet = DATACENTER_RET_OK;
 
-    iRet = DataCenter_CalcComplexModeCreateDataCenter();
+    iRet = DataCenter_CreateCalcClassInfo();
     if (iRet == DATACENTER_RET_FAIL)
     {
-        calc_error("[%s]DataCenter_CalcComplexModeCreateDataCenter is fail!\n", __FUNCTION__);
+        calc_error("[%s]DataCenter_CreateCalcClassInfo is fail!\n", __FUNCTION__);
         return COMPCALCSTATE_INIT;
     }
 
-    calc_printf("DataCenter_CalcComplexModeCreateDataCenter is create!\n");
+    calc_printf("DataCenter_CreateCalcClassInfo is create!\n");
         
 
     return COMPCALCSTATE_INPUTMENU;   
 }
 
 /************************************************************
- * FUNCTION:ComCalcState_InputMenu()
- * Description:该函数用来选择复杂模式的工作状态
- * Arguments[iState][In]:进行状态与执行函数的对应关系检查
- * return:主状态机的下一次状态
+ * FUNCTION             :ComCalcState_InputMenu()
+ * Description          :select working state of complex
+ * Arguments[iState][In]:Check the correspondence between 
+ *                       status and execution function
+ * return               :next state
  * *********************************************************/
 int ComCalcState_InputMenu(int iState)
 {
@@ -781,13 +803,13 @@ int ComCalcState_InputMenu(int iState)
     }
 }
 
-/************************************************************
- * FUNCTION:ComCalcstate_StatMethodSel()
- * Description:该函数是用来选择计算器在复杂模式下的统计方法
- * Arguments:
- Arg1[cpcStatMethod][In]:存储用户输入的选择后的统计方法字符串
- * return:success depend on the statmethod return, fail return CALCSTATE_RET_FAIL
- * *********************************************************/
+/******************************************************************
+ * FUNCTION               :ComCalcstate_StatMethodSel()
+ * Description            :select statistics method in complex mode
+ * Arg1[cpcStatMethod][In]:storage the statistics method
+ * return                 :success depend on the statmethod 
+ *                         return, fail return CALCSTATE_RET_FAIL
+ * ***************************************************************/
 int ComCalcState_StatMethodSel(char * cpcStatMethod)
 {
     if (cpcStatMethod == NULL)
@@ -831,10 +853,11 @@ int ComCalcState_StatMethodSel(char * cpcStatMethod)
 }
 
 /************************************************************
- * FUNCTION:ComCalcstate_StatMethodSelISI()
- * Description:输入学生信息
- * Arguments[iState][In]:进行状态与执行函数的对应关系检查
- * return:计算器复杂模式状态机的下一次状态
+ * FUNCTION             :ComCalcstate_StatMethodSelISI()
+ * Description          :input student info
+ * Arguments[iState][In]:Check the correspondence between 
+ *                       status and execution function
+ * return               :next state
  * *********************************************************/
 int ComCalcState_StatMethodSelISI(int iState)
 {
@@ -858,10 +881,10 @@ int ComCalcState_StatMethodSelISI(int iState)
         if (iRet == CALCINPUT_RET_OK)
         {   
             /*read current student number from datacenter and create buffer*/
-            iRet = DataCenter_ReadCalcComplexModeClassInfo(&stClass, DATA_CALCCOMPLEX_DEFAULT);
+            iRet = DataCenter_GetCalcClassInfo(&stClass, DATA_CALCCOMPLEX_DEFAULT);
             if (iRet == DATACENTER_RET_FAIL)
             {
-                calc_error("[%s]DataCenter_ReadClassInfo is fail!\n", __FUNCTION__);
+                calc_error("[%s]DataCenter_GetCalcClassInfo is fail!\n", __FUNCTION__);
                 return COMPCALCSTATE_INPUTSTUDENTINFO;
             }
             calc_printf("stStuInfo.gcStuName = %s\n stStuInfo.uiChineseScore = %d\n stStuInfo.uiMathScore = %d\n stStuInfo.uiEnglishScore = %d\n", 
@@ -872,10 +895,10 @@ int ComCalcState_StatMethodSelISI(int iState)
             {
                 stClass.stStu_a[0] = stStuInfo;
                 /*save student information to datacenter*/
-                iRet = DataCenter_WriteCalcComplexModeClassInfo(stClass, DATA_CALCCOMPLEX_WRITE_STUINFO);
+                iRet = DataCenter_SetCalcClassInfo(stClass, DATA_CALCCOMPLEX_WRITE_STUINFO);
                 if (iRet == DATACENTER_RET_FAIL)
                 {
-                    calc_error("[%s]DataCenter_WriteClassInfo is fail!\n", __FUNCTION__);
+                    calc_error("[%s]DataCenter_SetCalcClassInfo is fail!\n", __FUNCTION__);
                     return COMPCALCSTATE_INPUTSTUDENTINFO;
                 }
                 break;
@@ -896,10 +919,11 @@ int ComCalcState_StatMethodSelISI(int iState)
 }
 
 /************************************************************
- * FUNCTION:ComCalcstate_StatMethodSelPSI()
- * Description:打印学生信息
- * Arguments[iState][In]:进行状态与执行函数的对应关系检查
- * return:计算器复杂模式状态机的下一次状态
+ * FUNCTION             :ComCalcstate_StatMethodSelPSI()
+ * Description          :print student info 
+ * Arguments[iState][In]:Check the correspondence between 
+ *                       status and execution function
+ * return               :next state
  * *********************************************************/
 int ComCalcState_StatMethodSelPSI(int iState)
 {
@@ -914,10 +938,10 @@ int ComCalcState_StatMethodSelPSI(int iState)
 
     memset(&stClass, 0, sizeof(stClass));
     /*read current number from datacenter*/
-    iRet = DataCenter_ReadCalcComplexModeClassInfo(&stClass, DATA_CALCCOMPLEX_DEFAULT);
+    iRet = DataCenter_GetCalcClassInfo(&stClass, DATA_CALCCOMPLEX_DEFAULT);
     if (iRet == DATACENTER_RET_FAIL)
     {
-        calc_error("[%s]DataCenter_ReadClassInfo is fail!\n", __FUNCTION__);
+        calc_error("[%s]DataCenter_GetCalcClassInfo is fail!\n", __FUNCTION__);
         return COMPCALCSTATE_PRINTSTUDENTINFO;
     }
 
@@ -940,10 +964,11 @@ int ComCalcState_StatMethodSelPSI(int iState)
 }
 
 /************************************************************
- * FUNCTION:ComCalcstate_StatMethodSelCA()
- * Description:计算平均值
- * Arguments[iState][In]:进行状态与执行函数的对应关系检查
- * return:计算器复杂模式状态机的下一次状态
+ * FUNCTION             :ComCalcstate_StatMethodSelCA()
+ * Description          :calculating the average value
+ * Arguments[iState][In]:Check the correspondence between 
+ *                       status and execution function
+ * return               :next state
  * *********************************************************/
 int ComCalcState_StatMethodSelCA(int iState)
 {
@@ -958,10 +983,10 @@ int ComCalcState_StatMethodSelCA(int iState)
 
     memset(&stClass, 0, sizeof(stClass));
     /*read student information from datacenter*/
-    iRet = DataCenter_ReadCalcComplexModeClassInfo(&stClass, DATA_CALCCOMPLEX_DEFAULT);
+    iRet = DataCenter_GetCalcClassInfo(&stClass, DATA_CALCCOMPLEX_DEFAULT);
     if (iRet == DATACENTER_RET_FAIL)
     {
-        calc_error("[%s]DataCenter_ReadClassInfo is fail!\n", __FUNCTION__);
+        calc_error("[%s]DataCenter_GetCalcClassInfo is fail!\n", __FUNCTION__);
         return COMPCALCSTATE_CALCAVERAGE;
     }
 
@@ -978,10 +1003,10 @@ int ComCalcState_StatMethodSelCA(int iState)
         /*average has been calculator*/
         stClass.gbAverageInfoReady = true; 
         /*save the average calc wheather ready OK information to datacenter*/
-        iRet = DataCenter_WriteCalcComplexModeClassInfo(stClass, DATA_CALCCOMPLEX_WRITE_AVERAGE_READY);
+        iRet = DataCenter_SetCalcClassInfo(stClass, DATA_CALCCOMPLEX_WRITE_AVERAGE_READY);
         if (iRet == DATACENTER_RET_FAIL)
         {
-            calc_error("[%s]DataCenter_WriteClassInfo is fail!\n", __FUNCTION__);
+            calc_error("[%s]DataCenter_SetCalcClassInfo is fail!\n", __FUNCTION__);
             return COMPCALCSTATE_CALCAVERAGE;
         }
         
@@ -991,10 +1016,10 @@ int ComCalcState_StatMethodSelCA(int iState)
     }
 
     /*save the arerage information to datacenter*/
-    iRet = DataCenter_WriteCalcComplexModeClassInfo(stClass, DATA_CALCCOMPLEX_WRITE_AVERAGE);
+    iRet = DataCenter_SetCalcClassInfo(stClass, DATA_CALCCOMPLEX_WRITE_AVERAGE);
     if (iRet == DATACENTER_RET_FAIL)
     {
-        calc_error("[%s]DataCenter_WriteClassInfo is fail!\n", __FUNCTION__);
+        calc_error("[%s]DataCenter_SetCalcClassInfo is fail!\n", __FUNCTION__);
         return COMPCALCSTATE_CALCAVERAGE;
     }
 
@@ -1002,10 +1027,11 @@ int ComCalcState_StatMethodSelCA(int iState)
 }
 
 /************************************************************
- * FUNCTION:ComCalcstate_StatMethodSelCV()
- * Description:计算方差
- * Arguments[iState][In]:进行状态与执行函数的对应关系检查
- * return:计算器复杂模式状态机的下一次状态
+ * FUNCTION             :ComCalcstate_StatMethodSelCV()
+ * Description          :calculating the variance value
+ * Arguments[iState][In]:Check the correspondence between 
+ *                       status and execution function
+ * return               :next state
  * *********************************************************/
 int ComCalcState_StatMethodSelCV(int iState)
 {
@@ -1020,10 +1046,10 @@ int ComCalcState_StatMethodSelCV(int iState)
 
     memset(&stClass, 0, sizeof(stClass));
     /*read student information from datacenter*/
-    iRet = DataCenter_ReadCalcComplexModeClassInfo(&stClass, DATA_CALCCOMPLEX_DEFAULT);
+    iRet = DataCenter_GetCalcClassInfo(&stClass, DATA_CALCCOMPLEX_DEFAULT);
     if (iRet == DATACENTER_RET_FAIL)
     {
-        calc_error("[%s]DataCenter_ReadClassInfo is fail!\n", __FUNCTION__);
+        calc_error("[%s]DataCenter_GetCalcClassInfo is fail!\n", __FUNCTION__);
         return COMPCALCSTATE_CALCVARIANCE;
     }
 
@@ -1040,10 +1066,10 @@ int ComCalcState_StatMethodSelCV(int iState)
         /*Variance has been calculator*/
         stClass.gbVarianceInfoReady = true;
         /*save the variance calc wheather ready OK information to datacenter*/
-        iRet = DataCenter_WriteCalcComplexModeClassInfo(stClass, DATA_CALCCOMPLEX_WRITE_VARIANCE_READY);
+        iRet = DataCenter_SetCalcClassInfo(stClass, DATA_CALCCOMPLEX_WRITE_VARIANCE_READY);
         if (iRet == DATACENTER_RET_FAIL)
         {
-            calc_error("[%s]DataCenter_WriteClassInfo is fail!\n", __FUNCTION__);
+            calc_error("[%s]DataCenter_SetCalcClassInfo is fail!\n", __FUNCTION__);
             return COMPCALCSTATE_CALCAVERAGE;
         }
     
@@ -1053,10 +1079,10 @@ int ComCalcState_StatMethodSelCV(int iState)
     }
 
     /*save the Variance information to datacenter*/
-    iRet = DataCenter_WriteCalcComplexModeClassInfo(stClass, DATA_CALCCOMPLEX_WRITE_VARIANCE);
+    iRet = DataCenter_SetCalcClassInfo(stClass, DATA_CALCCOMPLEX_WRITE_VARIANCE);
     if (iRet == DATACENTER_RET_FAIL)
     {
-        calc_error("[%s]DataCenter_WriteClassInfo is fail!\n", __FUNCTION__);
+        calc_error("[%s]DataCenter_SetCalcClassInfo is fail!\n", __FUNCTION__);
         return COMPCALCSTATE_CALCVARIANCE;
     }
 
@@ -1064,10 +1090,11 @@ int ComCalcState_StatMethodSelCV(int iState)
 }
 
 /************************************************************
- * FUNCTION:ComCalcstate_StatMethodSelPA()
- * Description:打印平均值
- * Arguments[iState][In]:进行状态与执行函数的对应关系检查
- * return:计算器复杂模式状态机的下一次状态
+ * FUNCTION             :ComCalcstate_StatMethodSelPA()
+ * Description          :print average value
+ * Arguments[iState][In]:Check the correspondence between 
+ *                       status and execution function
+ * return               :next state
  * *********************************************************/
 int ComCalcState_StatMethodSelPA(int iState)
 {
@@ -1082,10 +1109,10 @@ int ComCalcState_StatMethodSelPA(int iState)
 
     memset(&stClass, 0, sizeof(stClass));
     /*read student information from datacenter*/
-    iRet = DataCenter_ReadCalcComplexModeClassInfo(&stClass, DATA_CALCCOMPLEX_DEFAULT);
+    iRet = DataCenter_GetCalcClassInfo(&stClass, DATA_CALCCOMPLEX_DEFAULT);
     if (iRet == DATACENTER_RET_FAIL)
     {
-        calc_error("[%s]DataCenter_ReadClassInfo is fail!\n", __FUNCTION__);
+        calc_error("[%s]DataCenter_GetCalcClassInfo is fail!\n", __FUNCTION__);
         return COMPCALCSTATE_CALCVARIANCE;
     }
 
@@ -1104,10 +1131,11 @@ int ComCalcState_StatMethodSelPA(int iState)
     }
 }
 /************************************************************
- * FUNCTION:ComCalcstate_StatMethodSelPV()
- * Description:打印方差
- * Arguments[iState][In]:进行状态与执行函数的对应关系检查
- * return:计算器复杂模式状态机的下一次状态
+ * FUNCTION             :ComCalcstate_StatMethodSelPV()
+ * Description          :print the variance value
+ * Arguments[iState][In]:Check the correspondence between 
+ *                       status and execution function
+ * return               :next state
  * *********************************************************/
 int ComCalcState_StatMethodSelPV(int iState)
 {
@@ -1122,10 +1150,10 @@ int ComCalcState_StatMethodSelPV(int iState)
 
     memset(&stClass, 0, sizeof(stClass));
     /*read student information from datacenter*/
-    iRet = DataCenter_ReadCalcComplexModeClassInfo(&stClass, DATA_CALCCOMPLEX_DEFAULT);
+    iRet = DataCenter_GetCalcClassInfo(&stClass, DATA_CALCCOMPLEX_DEFAULT);
     if (iRet == DATACENTER_RET_FAIL)
     {
-        calc_error("[%s]DataCenter_ReadClassInfo is fail!\n", __FUNCTION__);
+        calc_error("[%s]DataCenter_GetCalcClassInfo is fail!\n", __FUNCTION__);
         return COMPCALCSTATE_CALCVARIANCE;
     }
 
@@ -1144,33 +1172,35 @@ int ComCalcState_StatMethodSelPV(int iState)
     }
 }
 /************************************************************
- * FUNCTION:ComCalcstate_StatMethodSelE()
- * Description:退出复杂模式
- * Arguments[iState][In]:进行状态与执行函数的对应关系检查
- * return:计算器复杂模式状态机的下一次状态
+ * FUNCTION             :ComCalcstate_StatMethodSelE()
+ * Description          :exit complex mode
+ * Arguments[iState][In]:Check the correspondence between 
+ *                       status and execution function
+ * return               :next state
  * *********************************************************/ 
 int ComCalcState_StatMethodSelE(int iState)
 {
     int iRet = DATACENTER_RET_OK;
 
-    iRet = DataCenter_CalcComplexModeDestoryDataCenter();
+    iRet = DataCenter_DestoryCalcClassInfo();
     if (iRet == DATACENTER_RET_FAIL)
     {
-        calc_error("[%s]DataCenter_CalcComplexModeDestoryDataCenter is fail!\n", __FUNCTION__);
+        calc_error("[%s]DataCenter_DestoryCalcClassInfo is fail!\n", __FUNCTION__);
         return COMPCALCSTATE_FAIL;
     }
 
-    calc_printf("DataCenter_CalcComplexModeDestoryDataCenter is destory!\n");
+    calc_printf("DataCenter_DestoryCalcClassInfo is destory!\n");
 
     return COMPCALCSTATE_INVALID;
 }
     
-/************************************************************
- * FUNCTION:ComCalcstate_StatMethodSelE()
- * Description:重新选择复杂模式计算机的工作状态
- * Arguments[iState][In]:进行状态与执行函数的对应关系检查
- * return:计算器复杂模式状态机的下一次状态n return CALCSTATE_RET_OK, FAIL return CALCSTATE_RET_FAIL
- * *********************************************************/ 
+/**************************************************************
+ * FUNCTION             :ComCalcstate_StatMethodSelE()
+ * Description          :select working state of complex 
+ *                       calculator mode
+ * Arguments[iState][In]:Check the correspondence between 
+ *                       status and execution function
+ * return               :next state***************************/ 
 int ComCalcState_StatMethodSelFail(int iState)
 {
     CalcOutput_HintMsg(CALCSTRING_COMPLEX_MODE_STATISTICAL_METHOD_SLECT_AGAIN);

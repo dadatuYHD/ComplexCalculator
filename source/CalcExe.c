@@ -2,9 +2,10 @@
 *   Copyright (C) 2017 All rights reserved.
 *
 *   Filename:CalcExe.c
-*   Author  :叶鸿达
+*   Author  :yhd
 *   Date    :2017-04-30
-*   Describe:以下函数主要用于计算器数值的计算
+*   Describe:The following functions are mainly used for 
+*            the calculation of calculator values
 *
 ********************************************************/
 #include "../include/CalcState.h"

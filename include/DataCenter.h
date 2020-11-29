@@ -29,19 +29,19 @@
 #define DATA_CALCCOMPLEX_WRITE_AVERAGE_READY  11
 #define DATA_CALCCOMPLEX_WRITE_VARIANCE_READY 12
 
-int DataCenter_WriteStateMacMajorModeSel(char *pcSelectMode, int flag);
-int DataCenter_ReadStateMacMajorModeSel(char *pcSelectMode, int flag);
-int DataCenter_StateMacMajorModeSelCreateDataCenter(void);
-int DataCenter_StateMacMajorModeSelDestoryDataCenter(void);
+int DataCenter_SetCalcMode(char *pcSelectMode);
+int DataCenter_GetCalcMode(char *pcSelectMode);
+int DataCenter_CreateCalcMode(void);
+int DataCenter_DestoryCalcMode(void);
 
-int DataCenter_WriteCalcSimModeOperand(SimpleModeCalc_St stSimModeCalcOperand, int flag);
-int DataCenter_ReadCalcSimModeOperand(SimpleModeCalc_St * pstSimModeCalcOperand, int flag);
-int DataCenter_CalcSimModeOperandCreateDataCenter(void);
-int DataCenter_CalcSimModeOperandDestoryDataCenter(void);
+int DataCenter_SetCalcSimOper(SimpleModeCalc_St stSimModeCalcOperand, int flag);
+int DataCenter_GetCalcSimOper(SimpleModeCalc_St * pstSimModeCalcOperand);
+int DataCenter_CreateCalcSimOper(void);
+int DataCenter_DestoryCalcSimOper(void);
     
-int DataCenter_WriteCalcComplexModeClassInfo(Class_St stClass, int flag);
-int DataCenter_ReadCalcComplexModeClassInfo(Class_St * pstClass, int flag);
-int DataCenter_CalcComplexModeCreateDataCenter(void);
-int DataCenter_CalcComplexModeDestoryDataCenter(void);
+int DataCenter_SetCalcClassInfo(Class_St stClass, int flag);
+int DataCenter_GetCalcClassInfo(Class_St * pstClass, int flag);
+int DataCenter_CreateCalcClassInfo(void);
+int DataCenter_DestoryCalcClassInfo(void);
 
 #endif

@@ -2,9 +2,9 @@
 *   Copyright (C) 2017 All rights reserved.
 *
 *   Filename:CalcOutput.c
-*   Author  :叶鸿达
+*   Author  :yhd
 *   Date    :2017-05-01
-*   Describe:计算器输出模块相关函数
+*   Describe:calculator output model
 *
 ********************************************************/
 #include "../include/CalcOutput.h"
@@ -18,10 +18,8 @@
 
 
 /************************************************************
-FUNCTION:CalcOutput_Result()
-Description:该函数主要用来输出结果提示信息
-Arguments:无
-return:无返回值
+ * FUNCTION   :CalcOutput_Result()
+ * Description:Output Tips
 ***********************************************************/
 void CalcOutput_Result(unsigned int ui1stNum, char cOperator, unsigned int ui2ndNum, unsigned int uiResult)
 {
@@ -45,11 +43,11 @@ void CalcOutput_Result(unsigned int ui1stNum, char cOperator, unsigned int ui2nd
 }
 
 /************************************************************
-FUNCTION:CalcOutput_HintMsg()
-Description:该函数主要用来输出提示信息
-Arguments:
-Arg[HintMsg][In]:提示信息相关的整型宏
-return:无返回值
+* FUNCTION        :CalcOutput_HintMsg()
+* Description     :Output tips
+* Arguments       :
+* Arg[HintMsg][In]:slect tips
+* return:void
 ***********************************************************/
 void CalcOutput_HintMsg(unsigned int HintMsg)
 {

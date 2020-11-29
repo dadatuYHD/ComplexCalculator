@@ -2,9 +2,9 @@
 *   Copyright (C) 2017 All rights reserved.
 *
 *   Filename:CalcInput.c
-*   Author  :叶鸿达
+*   Author  :yhd
 *   Date    :2017-04-30
-*   Describe:计算器输入处理相关函数
+*   Describe:Calculator input processing related functions
 *
 ********************************************************/
 #include "../include/CalcState.h"

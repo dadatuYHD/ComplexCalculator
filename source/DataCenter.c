@@ -6,19 +6,21 @@
 #include "../include/DataCenter.h"
 #include "../include/calc_complex_debug.h"
 
-char * gpcSelectMode = NULL;
-SimpleModeCalc_St * gpstSimModeCalcOperand = NULL;
-Class_St * gpstClass = NULL;
+char * g_pcSelectMode = NULL;
+SimpleModeCalc_St * g_pstSimModeCalcOperand = NULL;
+Class_St * g_pstClass = NULL;
 
 
-/************************************************************
- * FUNCTION:DataCenter_WriteStateMacMajorModeSel()
- * Description:该函数主要用来把用户选择计算机的工作模式数据存入数据中心保存
- * Arguments[In][pcSelectMode]存入的数据
- * Arguments[In][flag]存入数据的模式选择
- * return:成功返回DATACENTER_RET_OK，失败返回DATACENTER_RET_FAIL
- * *********************************************************/
-int DataCenter_WriteStateMacMajorModeSel(char *pcSelectMode, int flag)
+/**************************************************************
+ * FUNCTION:DataCenter_SetCalcMode()
+ * Description                :Store the data of the working 
+ *                             mode of the calculator selected 
+ *                             by the user in the data center
+ * Arguments[In][pcSelectMode]:mode data
+ * return                     :success return DATACENTER_RET_OK
+ *                             fail return DATACENTER_RET_FAIL
+ *************************************************************/
+int DataCenter_SetCalcMode(char *pcSelectMode)
 {
     /*check intput parameter wheather valid*/
     if (pcSelectMode == NULL)
@@ -27,19 +29,21 @@ int DataCenter_WriteStateMacMajorModeSel(char *pcSelectMode, int flag)
         return DATACENTER_RET_FAIL;
     }
 
-    *gpcSelectMode = *pcSelectMode;
+    *g_pcSelectMode = *pcSelectMode;
 
     return DATACENTER_RET_OK;
 }
 
-/************************************************************
- * FUNCTION:DataCenter_ReadStateMacMajorModeSel()
- * Description:该函数主要用来读取用户存储到数据中心的计算机模式选择数据
- * Arguments[In][pcSelectMode]读取的数据存储buffe
- * Arguments[In][flag]读取数据的模式选择
- * return:成功返回DATACENTER_RET_OK，失败返回DATACENTER_RET_FAIL
- * *********************************************************/
-int DataCenter_ReadStateMacMajorModeSel(char *pcSelectMode, int flag)
+/***************************************************************
+ * FUNCTION                   :DataCenter_GetCalcMode()
+ * Description                :Read the computer mode 
+                               selection data stored by the 
+                               user in the data center
+ * Arguments[In][pcSelectMode]:storage the mode data
+ * return                     :success return DATACENTER_RET_OK
+ *                             fail return DATACENTER_RET_FAIL
+ * ************************************************************/
+int DataCenter_GetCalcMode(char *pcSelectMode)
 {
     /*check intput parameter wheather valid*/
     if (pcSelectMode == NULL)
@@ -48,77 +52,84 @@ int DataCenter_ReadStateMacMajorModeSel(char *pcSelectMode, int flag)
         return DATACENTER_RET_FAIL;
     }
 
-    *pcSelectMode = *gpcSelectMode;
+    *pcSelectMode = *g_pcSelectMode;
 
     return DATACENTER_RET_OK;
 }
 
 /************************************************************
- * FUNCTION:DataCenter_StateMacMajorModeSelCreateDataCenter()
- * Description:该函数主要用来创建关于保存modeselect信息的datacenter空间
- * Arguments：无
- * return:成功返回DATACENTER_RET_OK，失败返回DATACENTER_RET_FAIL
+ * FUNCTION   :DataCenter_CreateCalcMode()
+ * Description:This function is mainly used to create 
+ *             datacenter space for saving modeselect 
+ *             information
+ * Arguments  :void
+ * return     :success return DATACENTER_RET_OK，
+ *             fail return DATACENTER_RET_FAIL
  * *********************************************************/
-int DataCenter_StateMacMajorModeSelCreateDataCenter(void)
+int DataCenter_CreateCalcMode(void)
 {
-    gpcSelectMode = (char *)malloc(sizeof(char));
-    if (gpcSelectMode == NULL)
+    g_pcSelectMode = (char *)malloc(sizeof(char));
+    if (g_pcSelectMode == NULL)
     {
         calc_error("[%s]malloc is fail!\n", __FUNCTION__);
         return DATACENTER_RET_FAIL;
     }   
 
-    memset(gpcSelectMode, 0, sizeof(char));
+    memset(g_pcSelectMode, 0, sizeof(char));
 
     return DATACENTER_RET_OK;
 }
 
 /************************************************************
- * FUNCTION:DataCenter_StateMacMajorModeSelDestoryDataCenter()
- * Description:该函数主要用来释放关于保存modeselect信息的datacenter空间
- * Arguments：无
- * return:成功返回DATACENTER_RET_OK，失败返回DATACENTER_RET_FAIL
+ * FUNCTION   :DataCenter_DestoryCalcMode()
+ * Description:Destory datacenter space for saving modeselect 
+ *             information
+ * Arguments  ：void
+ * return     :success return DATACENTER_RET_OK，
+ *             fail return DATACENTER_RET_FAIL
  * *********************************************************/
-int DataCenter_StateMacMajorModeSelDestoryDataCenter(void)
+int DataCenter_DestoryCalcMode(void)
 {
-    free(gpcSelectMode);
-    gpcSelectMode = NULL;   
+    free(g_pcSelectMode);
+    g_pcSelectMode = NULL;   
 
     return DATACENTER_RET_OK;
 }
 
 
 /************************************************************
- * FUNCTION:DataCenter_WriteCalcSimModeOperand()
- * Description:该函数主要用来保存用户输入的计算器操作数信息
- * Arguments[In][uiNum]需要保存的数字
- * Arguments[In][cOperator]需要保存的运算符
- * Arguments[In][flag]写入数据的模式选择
- * return:成功返回DATACENTER_RET_OK，失败返回DATACENTER_RET_FAIL
+ * FUNCTION                :DataCenter_SetSimCalcOper()
+ * Description             :Save the calculator operand 
+ *                          information entered by the user
+ * Arguments[In][uiNum]    :Number to be saved
+ * Arguments[In][cOperator]:Operand to be saved
+ * Arguments[In][flag]     :mode select
+ * return                  :success return DATACENTER_RET_OK
+ *                          fail return DATACENTER_RET_FAIL
  * *********************************************************/
-int DataCenter_WriteCalcSimModeOperand(SimpleModeCalc_St stSimModeCalcOperand, int flag)
+int DataCenter_SetSimCalcOper(SimpleModeCalc_St stSimModeCalcOperand, int flag)
 {
     calc_trace();
 
     if (flag == DATA_CALCSIMPLE_WRITE_1STNUM)
     {
-        gpstSimModeCalcOperand->gui1stNum = stSimModeCalcOperand.gui1stNum;
-        calc_printf("gpstSimModeCalcOperand->gui1stNum = %d\n", gpstSimModeCalcOperand->gui1stNum);
+        g_pstSimModeCalcOperand->gui1stNum = stSimModeCalcOperand.gui1stNum;
+        calc_printf("g_pstSimModeCalcOperand->gui1stNum = %d\n", g_pstSimModeCalcOperand->gui1stNum);
     }
     else if (flag == DATA_CALCSIMPLE_WRITE_2NDNUM)
     {
-        gpstSimModeCalcOperand->gui2ndNum = stSimModeCalcOperand.gui2ndNum;
-        calc_printf("gpstSimModeCalcOperand->gui2ndNum = %d\n", gpstSimModeCalcOperand->gui2ndNum);
+        g_pstSimModeCalcOperand->gui2ndNum = stSimModeCalcOperand.gui2ndNum;
+        calc_printf("g_pstSimModeCalcOperand->gui2ndNum = %d\n", g_pstSimModeCalcOperand->gui2ndNum);
     }
     else if (flag == DATA_CALCSIMPLE_WRITE_OPERATOR)
     {
-        gpstSimModeCalcOperand->gcOperator = stSimModeCalcOperand.gcOperator;
-        calc_printf("gpstSimModeCalcOperand->gcOperator = %c\n", gpstSimModeCalcOperand->gcOperator);
+        g_pstSimModeCalcOperand->gcOperator = stSimModeCalcOperand.gcOperator;
+        calc_printf("g_pstSimModeCalcOperand->gcOperator = %c\n", g_pstSimModeCalcOperand->gcOperator);
     }
     else if (flag == DATA_CALCSIMPLE_WRITE_RESULT)
     {
-        gpstSimModeCalcOperand->guiResult = stSimModeCalcOperand.guiResult;
-        calc_printf("gpstSimModeCalcOperand->guiResult = %d\n", gpstSimModeCalcOperand->guiResult);
+        g_pstSimModeCalcOperand->guiResult = stSimModeCalcOperand.guiResult;
+        calc_printf("g_pstSimModeCalcOperand->guiResult = %d\n", g_pstSimModeCalcOperand->guiResult);
     }
     else
     {
@@ -128,14 +139,15 @@ int DataCenter_WriteCalcSimModeOperand(SimpleModeCalc_St stSimModeCalcOperand, i
     return DATACENTER_RET_OK;
 }
 
-/************************************************************
- * FUNCTION:DataCenter_ReadCalcSimModeOperand()
- * Description:该函数主要用来读取保存到数据中心的计算器操作数信息
- * Arguments[Out][pstSimModeCalcOperand]指向一个buffer
- * Arguments[In][flag]写入数据的模式选择
- * return:成功返回DATACENTER_RET_OK，失败返回DATACENTER_RET_FAIL
- * *********************************************************/
-int DataCenter_ReadCalcSimModeOperand(SimpleModeCalc_St * pstSimModeCalcOperand, int flag)
+/******************************************************************************
+ * FUNCTION                             :DataCenter_GetCalcSimOper()
+ * Description                          :Read the calculator 
+ *                                       operand information in the data center
+ * Arguments[Out][pstSimModeCalcOperand]:buffer
+ * return                               :success return DATACENTER_RET_OK
+ *                                       fail return DATACENTER_RET_FAIL
+ * ****************************************************************************/
+int DataCenter_GetCalcSimOper(SimpleModeCalc_St * pstSimModeCalcOperand)
 {
     if (pstSimModeCalcOperand == NULL)
     {
@@ -143,45 +155,49 @@ int DataCenter_ReadCalcSimModeOperand(SimpleModeCalc_St * pstSimModeCalcOperand,
         return DATACENTER_RET_FAIL;
     }
 
-    pstSimModeCalcOperand->gui1stNum = gpstSimModeCalcOperand->gui1stNum;
-    pstSimModeCalcOperand->gui2ndNum = gpstSimModeCalcOperand->gui2ndNum;
-    pstSimModeCalcOperand->gcOperator = gpstSimModeCalcOperand->gcOperator;
-    pstSimModeCalcOperand->guiResult = gpstSimModeCalcOperand->guiResult;
+    pstSimModeCalcOperand->gui1stNum = g_pstSimModeCalcOperand->gui1stNum;
+    pstSimModeCalcOperand->gui2ndNum = g_pstSimModeCalcOperand->gui2ndNum;
+    pstSimModeCalcOperand->gcOperator = g_pstSimModeCalcOperand->gcOperator;
+    pstSimModeCalcOperand->guiResult = g_pstSimModeCalcOperand->guiResult;
 
     return DATACENTER_RET_OK;
 }
 
 
 /************************************************************
- * FUNCTION:DataCenter_CalcSimModeOperandDestoryDataCenter()
- * Description:该函数主要用来创建关于保存simple calc信息的datacenter空间
- * Arguments：无
- * return:成功返回DATACENTER_RET_OK，失败返回DATACENTER_RET_FAIL
+ * FUNCTION   :DataCenter_CreateSimCalcOper()
+ * Description:Create a datacenter space for saving simple 
+ *             calc operand information
+ * Arguments  :void
+ * return     :success return DATACENTER_RET_OK，
+ *             fail return DATACENTER_RET_FAIL
  * *********************************************************/
- int DataCenter_CalcSimModeOperandCreateDataCenter(void)
+ int DataCenter_CreateSimCalcOper(void)
 {
-    gpstSimModeCalcOperand = (SimpleModeCalc_St *)malloc(sizeof(SimpleModeCalc_St));
-    if (gpstSimModeCalcOperand == NULL)
+    g_pstSimModeCalcOperand = (SimpleModeCalc_St *)malloc(sizeof(SimpleModeCalc_St));
+    if (g_pstSimModeCalcOperand == NULL)
     {
         calc_error("[%s]malloc is fail!\n", __FUNCTION__);
         return DATACENTER_RET_FAIL;
     }
     
-    memset(gpstSimModeCalcOperand, 0, sizeof(gpstSimModeCalcOperand));
+    memset(g_pstSimModeCalcOperand, 0, sizeof(g_pstSimModeCalcOperand));
 
     return DATACENTER_RET_OK;
 }
 
 /************************************************************
- * FUNCTION:DataCenter_CalcSimModeOperandDestoryDataCenter()
- * Description:该函数主要用来释放关于保存simple calc信息的datacenter空间
- * Arguments：无
- * return:成功返回DATACENTER_RET_OK，失败返回DATACENTER_RET_FAIL
+ * FUNCTION   :DataCenter_DestoryCalcSimOper()
+ * Description:Destory datacenter space for saving simple 
+ *             calc information
+ * Arguments  :void
+ * return     :success return DATACENTER_RET_OK，
+ *             fail return DATACENTER_RET_FAIL
  * *********************************************************/
-int DataCenter_CalcSimModeOperandDestoryDataCenter(void)
+int DataCenter_DestoryCalcSimOper(void)
 {
-    free(gpstSimModeCalcOperand);
-    gpstSimModeCalcOperand = NULL;
+    free(g_pstSimModeCalcOperand);
+    g_pstSimModeCalcOperand = NULL;
 
     return DATACENTER_RET_OK;
 }
@@ -189,43 +205,44 @@ int DataCenter_CalcSimModeOperandDestoryDataCenter(void)
 
 
 /************************************************************
- * FUNCTION:DataCenter_WriteCalcComplexModeClassInfo()
- * Description:该函数主要用来保存班级的相关信息
- * Arguments[In][stClass]需要保存的结构体信息
- * Arguments[In][flag]写入数据的模式选择
- * return:成功返回DATACENTER_RET_OK，失败返回DATACENTER_RET_FAIL
+ * FUNCTION              :DataCenter_SetCalcClassInfo()
+ * Description           :storage some information about class
+ * Arguments[In][stClass]:information about class
+ * Arguments[In][flag]   :data mode slect
+ * return                :success return DATACENTER_RET_OK，
+ *                        fail return DATACENTER_RET_FAIL
  * *********************************************************/
-int DataCenter_WriteCalcComplexModeClassInfo(Class_St stClass, int flag)
+int DataCenter_SetCalcClassInfo(Class_St stClass, int flag)
 {
     calc_trace();
 
     if (flag == (DATA_CALCCOMPLEX_WRITE_STUINFO))
     {   
-        strcpy(gpstClass->stStu_a[gpstClass->guiCurStuNumCount].gcStuName, stClass.stStu_a[0].gcStuName);
-        gpstClass->stStu_a[gpstClass->guiCurStuNumCount].uiChineseScore = stClass.stStu_a[0].uiChineseScore;
-        gpstClass->stStu_a[gpstClass->guiCurStuNumCount].uiMathScore = stClass.stStu_a[0].uiMathScore;
-        gpstClass->stStu_a[gpstClass->guiCurStuNumCount].uiEnglishScore = stClass.stStu_a[0].uiEnglishScore;
-        gpstClass->guiCurStuNumCount++;
+        strcpy(g_pstClass->stStu_a[g_pstClass->guiCurStuNumCount].gcStuName, stClass.stStu_a[0].gcStuName);
+        g_pstClass->stStu_a[g_pstClass->guiCurStuNumCount].uiChineseScore = stClass.stStu_a[0].uiChineseScore;
+        g_pstClass->stStu_a[g_pstClass->guiCurStuNumCount].uiMathScore = stClass.stStu_a[0].uiMathScore;
+        g_pstClass->stStu_a[g_pstClass->guiCurStuNumCount].uiEnglishScore = stClass.stStu_a[0].uiEnglishScore;
+        g_pstClass->guiCurStuNumCount++;
     }
     else if(flag == DATA_CALCCOMPLEX_WRITE_AVERAGE)
     {
-        gpstClass->gdChineseScoreAverage = stClass.gdChineseScoreAverage;
-        gpstClass->gdMathScoreAverage    = stClass.gdMathScoreAverage;
-        gpstClass->gdEnglishScoreAverage = stClass.gdEnglishScoreAverage;
+        g_pstClass->gdChineseScoreAverage = stClass.gdChineseScoreAverage;
+        g_pstClass->gdMathScoreAverage    = stClass.gdMathScoreAverage;
+        g_pstClass->gdEnglishScoreAverage = stClass.gdEnglishScoreAverage;
     }
     else if (flag == DATA_CALCCOMPLEX_WRITE_VARIANCE)
     {
-        gpstClass->gdChineseScoreVariance = stClass.gdChineseScoreVariance;
-        gpstClass->gdMathScoreVariance    = stClass.gdMathScoreVariance;
-        gpstClass->gdEnglishScoreVariance = stClass.gdEnglishScoreVariance;
+        g_pstClass->gdChineseScoreVariance = stClass.gdChineseScoreVariance;
+        g_pstClass->gdMathScoreVariance    = stClass.gdMathScoreVariance;
+        g_pstClass->gdEnglishScoreVariance = stClass.gdEnglishScoreVariance;
     }
     else if (flag == DATA_CALCCOMPLEX_WRITE_AVERAGE_READY)
     {
-        gpstClass->gbAverageInfoReady = stClass.gbAverageInfoReady;
+        g_pstClass->gbAverageInfoReady = stClass.gbAverageInfoReady;
     }
     else if (flag == DATA_CALCCOMPLEX_WRITE_VARIANCE_READY)
     {
-        gpstClass->gbVarianceInfoReady = stClass.gbVarianceInfoReady;
+        g_pstClass->gbVarianceInfoReady = stClass.gbVarianceInfoReady;
     }
     else
     {
@@ -235,14 +252,16 @@ int DataCenter_WriteCalcComplexModeClassInfo(Class_St stClass, int flag)
     return DATACENTER_RET_OK;
 }
 
-/************************************************************
- * FUNCTION:DataCenter_ReadCalcComplexModeClassInfo()
- * Description:该函数主要读取保存在数据中心的班级的相关信息
- * Arguments[Out][pstClass]读取之后数据保存的buffer
- * Arguments[In][flag]读取数据的模式选择
- * return:成功返回DATACENTER_RET_OK，失败返回DATACENTER_RET_FAIL
+/**************************************************************
+ * FUNCTION                :DataCenter_GetCalcClassInfo()
+ * Description             :get some information about class 
+ *                          from datacenter
+ * Arguments[Out][pstClass]:storage the class info
+ * Arguments[In][flag]     :mode slect
+ * return                  :success return DATACENTER_RET_OK，
+ *                          fail return DATACENTER_RET_FAIL
  * *********************************************************/
- int DataCenter_ReadCalcComplexModeClassInfo(Class_St * pstClass, int flag)
+ int DataCenter_GetCalcClassInfo(Class_St * pstClass, int flag)
 {
     if (pstClass == NULL)
     {
@@ -252,19 +271,19 @@ int DataCenter_WriteCalcComplexModeClassInfo(Class_St stClass, int flag)
 
     if (flag == DATA_CALCCOMPLEX_DEFAULT)
     {   
-        for (int i = 0; i < gpstClass->guiCurStuNumCount; i++)
+        for (int i = 0; i < g_pstClass->guiCurStuNumCount; i++)
         {
-            pstClass->stStu_a[i] = gpstClass->stStu_a[i];
+            pstClass->stStu_a[i] = g_pstClass->stStu_a[i];
         }
-        pstClass->gdChineseScoreAverage   = gpstClass->gdChineseScoreAverage;
-        pstClass->gdMathScoreAverage      = gpstClass->gdMathScoreAverage;
-        pstClass->gdEnglishScoreAverage   = gpstClass->gdEnglishScoreAverage;
-        pstClass->gdChineseScoreVariance  = gpstClass->gdChineseScoreVariance;
-        pstClass->gdMathScoreVariance     = gpstClass->gdMathScoreVariance;
-        pstClass->gdEnglishScoreVariance  = gpstClass->gdEnglishScoreVariance;
-        pstClass->guiCurStuNumCount       = gpstClass->guiCurStuNumCount;
-        pstClass->gbAverageInfoReady      = gpstClass->gbAverageInfoReady;
-        pstClass->gbVarianceInfoReady     = gpstClass->gbVarianceInfoReady; 
+        pstClass->gdChineseScoreAverage   = g_pstClass->gdChineseScoreAverage;
+        pstClass->gdMathScoreAverage      = g_pstClass->gdMathScoreAverage;
+        pstClass->gdEnglishScoreAverage   = g_pstClass->gdEnglishScoreAverage;
+        pstClass->gdChineseScoreVariance  = g_pstClass->gdChineseScoreVariance;
+        pstClass->gdMathScoreVariance     = g_pstClass->gdMathScoreVariance;
+        pstClass->gdEnglishScoreVariance  = g_pstClass->gdEnglishScoreVariance;
+        pstClass->guiCurStuNumCount       = g_pstClass->guiCurStuNumCount;
+        pstClass->gbAverageInfoReady      = g_pstClass->gbAverageInfoReady;
+        pstClass->gbVarianceInfoReady     = g_pstClass->gbVarianceInfoReady; 
     }
     else
     {
@@ -275,76 +294,79 @@ int DataCenter_WriteCalcComplexModeClassInfo(Class_St stClass, int flag)
 }
 
 /************************************************************
- * FUNCTION:DataCenter_CalcComplexModeCreateDataCenter()
- * Description:该函数主要用来创建关于保存class信息的datacenter空间
- * Arguments：无
- * return:成功返回DATACENTER_RET_OK，失败返回DATACENTER_RET_FAIL
+ * FUNCTION:DataCenter_CreateCalcClassInfo()
+ * Description:create datacenter space about class info
+ * Arguments  :void
+ * return     :success return DATACENTER_RET_OK，
+ *             fail return DATACENTER_RET_FAIL
  * *********************************************************/
- int DataCenter_CalcComplexModeCreateDataCenter(void)
+ int DataCenter_CreateCalcClassInfo(void)
 {
-    gpstClass = (Class_St *)malloc(sizeof(Class_St));
-    if (gpstClass == NULL)
+    g_pstClass = (Class_St *)malloc(sizeof(Class_St));
+    if (g_pstClass == NULL)
     {
         calc_error("[%s]malloc is error!\n", __FUNCTION__);
         return DATACENTER_RET_FAIL;
     }
-    memset(gpstClass, 0, sizeof(Class_St)); 
+    memset(g_pstClass, 0, sizeof(Class_St)); 
 
-    for (int i = 0; i < gpstClass->guiCurStuNumCount; i++)
+    for (int i = 0; i < g_pstClass->guiCurStuNumCount; i++)
     {
         calc_printf("gcStuName = %s\n uiChineseScore = %d\n uiMathScore = %d\n uiEnglishScore = %d\n", 
-                        (gpstClass->stStu_a + i)->gcStuName, (gpstClass->stStu_a + i)->uiChineseScore,
-                        (gpstClass->stStu_a + i)->uiMathScore, (gpstClass->stStu_a + i)->uiEnglishScore);
+                        (g_pstClass->stStu_a + i)->gcStuName, (g_pstClass->stStu_a + i)->uiChineseScore,
+                        (g_pstClass->stStu_a + i)->uiMathScore, (g_pstClass->stStu_a + i)->uiEnglishScore);
     }
     
 
     calc_printf("gdChineseScoreAverage = %lf\n gdMathScoreAverage = %lf\n gdEnglishScoreAverage = %lf\n\
 gdChineseScoreVariance = %lf\n gdMathScoreVariance = %lf\n gdEnglishScoreVariance = %lf\n guiCurStuNumCount = %d\n \
 gbAverageInfoReady = %d\n gbVarianceInfoReady = %d\n",
-                                                  gpstClass->gdChineseScoreAverage,
-                                                  gpstClass->gdMathScoreAverage,
-                                                  gpstClass->gdEnglishScoreAverage,
-                                                  gpstClass->gdChineseScoreVariance,
-                                                  gpstClass->gdMathScoreVariance,
-                                                  gpstClass->gdEnglishScoreVariance,
-                                                  gpstClass->guiCurStuNumCount,
-                                                  gpstClass->gbAverageInfoReady,
-                                                  gpstClass->gbVarianceInfoReady);
+                                                  g_pstClass->gdChineseScoreAverage,
+                                                  g_pstClass->gdMathScoreAverage,
+                                                  g_pstClass->gdEnglishScoreAverage,
+                                                  g_pstClass->gdChineseScoreVariance,
+                                                  g_pstClass->gdMathScoreVariance,
+                                                  g_pstClass->gdEnglishScoreVariance,
+                                                  g_pstClass->guiCurStuNumCount,
+                                                  g_pstClass->gbAverageInfoReady,
+                                                  g_pstClass->gbVarianceInfoReady);
 
     return DATACENTER_RET_OK;
 }
 
 /************************************************************
- * FUNCTION:DataCenter_CalcComplexModeDestoryDataCenter()
- * Description:该函数主要用来释放关于保存class信息的datacenter空间
- * Arguments：无
- * return:成功返回DATACENTER_RET_OK，失败返回DATACENTER_RET_FAIL
+ * FUNCTION   :DataCenter_DestoryCalcClassInfo()
+ * Description:destory the datacenter space about storage 
+ *             the class info
+ * Arguments  :void
+ * return     :success return DATACENTER_RET_OK，
+ *             fail return DATACENTER_RET_FAIL
  * *********************************************************/
-int DataCenter_CalcComplexModeDestoryDataCenter(void)
+int DataCenter_DestoryCalcClassInfo(void)
 {
-    for (int i = 0; i < gpstClass->guiCurStuNumCount; i++)
+    for (int i = 0; i < g_pstClass->guiCurStuNumCount; i++)
     {
         calc_printf("gcStuName = %s\n uiChineseScore = %d\n uiMathScore = %d\n uiEnglishScore = %d\n", 
-                        (gpstClass->stStu_a + i)->gcStuName, (gpstClass->stStu_a + i)->uiChineseScore,
-                        (gpstClass->stStu_a + i)->uiMathScore, (gpstClass->stStu_a + i)->uiEnglishScore);
+                        (g_pstClass->stStu_a + i)->gcStuName, (g_pstClass->stStu_a + i)->uiChineseScore,
+                        (g_pstClass->stStu_a + i)->uiMathScore, (g_pstClass->stStu_a + i)->uiEnglishScore);
     }
 
     
     calc_printf("gdChineseScoreAverage = %lf\n gdMathScoreAverage = %lf\n gdEnglishScoreAverage = %lf\n\
 gdChineseScoreVariance = %lf\n gdMathScoreVariance = %lf\n gdEnglishScoreVariance = %lf\n guiCurStuNumCount = %d\n \
 gbAverageInfoReady = %d\n gbVarianceInfoReady = %d\n",
-                                                  gpstClass->gdChineseScoreAverage,
-                                                  gpstClass->gdMathScoreAverage,
-                                                  gpstClass->gdEnglishScoreAverage,
-                                                  gpstClass->gdChineseScoreVariance,
-                                                  gpstClass->gdMathScoreVariance,
-                                                  gpstClass->gdEnglishScoreVariance,
-                                                  gpstClass->guiCurStuNumCount,
-                                                  gpstClass->gbAverageInfoReady,
-                                                  gpstClass->gbVarianceInfoReady);
-    memset(gpstClass, 0, sizeof(Class_St)); 
-    free(gpstClass);
-    gpstClass = NULL;
+                                                  g_pstClass->gdChineseScoreAverage,
+                                                  g_pstClass->gdMathScoreAverage,
+                                                  g_pstClass->gdEnglishScoreAverage,
+                                                  g_pstClass->gdChineseScoreVariance,
+                                                  g_pstClass->gdMathScoreVariance,
+                                                  g_pstClass->gdEnglishScoreVariance,
+                                                  g_pstClass->guiCurStuNumCount,
+                                                  g_pstClass->gbAverageInfoReady,
+                                                  g_pstClass->gbVarianceInfoReady);
+    memset(g_pstClass, 0, sizeof(Class_St)); 
+    free(g_pstClass);
+    g_pstClass = NULL;
 
     return DATACENTER_RET_OK;
 }
