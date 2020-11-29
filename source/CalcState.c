@@ -2,9 +2,9 @@
 *   Copyright (C) 2017 All rights reserved.
 *
 *   Filename:CalState.c
-*   Author  :叶鸿达
+*   Author  :yhd
 *   Date    :2017-04-27
-*   Describe:计算器状态控制相关函数
+*   Describe:calculator state control 
 *
 ********************************************************/
 #include <unistd.h>

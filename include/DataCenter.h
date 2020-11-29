@@ -2,7 +2,7 @@
 *   Copyright (C) 2017 All rights reserved.
 *
 *   Filename:DataCenter.h
-*   Author  :YHD
+*   Author  :yhd
 *   Date    :2017-05-23
 *   Describe:
 *

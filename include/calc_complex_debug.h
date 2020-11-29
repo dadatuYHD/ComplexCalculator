@@ -2,7 +2,7 @@
 *   Copyright (C) 2017 All rights reserved.
 *
 *   Filename:calc_simple_YHD.h
-*   Author  :YHD
+*   Author  :yhd
 *   Date    :2017-04-30
 *   Describe:
 *
