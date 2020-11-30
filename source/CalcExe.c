@@ -22,13 +22,10 @@
 
 
 /************************************************************
-FUNCTION:Calculating_Sum()
-Description:该函数主要用来对输入的参数进行加法运算
-Arguments:
-Arg1:[In] 传递加法运算的第一个参数的指针
-Arg2:[In] 传递加法运算的第二个参数的指针
-Arg3:[Out] 传递加法运算存放运算结果的指针
-return:成功返回CALCEXE_RET_OK ,错误返回CALCEXE_RET_FAIL
+* FUNCTION   :Calculating_Sum()
+* Description:Add the input parameters
+* return     :success return CALCEXE_RET_OK 
+*             fail return CALCEXE_RET_FAIL
 ***********************************************************/
 int Calculating_Sum(unsigned int * gui1stNum, unsigned int * gui2ndNum,unsigned int * guiResult)
 {
@@ -45,14 +42,9 @@ int Calculating_Sum(unsigned int * gui1stNum, unsigned int * gui2ndNum,unsigned 
 }
 
 /************************************************************
-FUNCTION:Calculating_Mub()
-Description:该函数主要用来对输入的参数进行减法运算
-Arguments:
-Arg1:[In] 传递减法运算的第一个参数的指针
-Arg2:[In] 传递减法运算的第二个参数的指针
-Arg3:[Out] 传递减法运算存放运算结果的指针
-return:成功返回CALCEXE_RET_OK ,如果某一个参数为NULL，返回CALCEXE_RET_FAIL，如果第一个参数小于第二个参数，返回CALCEXE_RET_FAIL_1ST_GREATER_2ND
-***********************************************************/
+* FUNCTION:Calculating_Mub()
+* Description:sub the input parameters
+************************************************************/
 int Calculating_Mub(unsigned int * gui1stNum, unsigned int * gui2ndNum,unsigned int * guiResult)
 {
     /*check the parameter is valid*/
@@ -75,13 +67,10 @@ int Calculating_Mub(unsigned int * gui1stNum, unsigned int * gui2ndNum,unsigned 
 }
 
 /************************************************************
-FUNCTION:Calculating_Mul()
-Description:该函数主要用来对输入的参数进行乘法运算
-Arguments:
-Arg1:[In] 传递乘法运算的第一个参数的指针
-Arg2:[In] 传递乘法运算的第二个参数的指针
-Arg3:[Out] 传递乘法运算存放运算结果的指针
-return:成功返回CALCEXE_RET_OK ,错误返回CALCEXE_RET_FAIL
+* FUNCTION   :Calculating_Mul()
+* Description:multiply the input parameters
+* return     :success return CALCEXE_RET_OK 
+*             fail return CALCEXE_RET_FAIL
 ***********************************************************/
 int Calculating_Mul(unsigned int * gui1stNum, unsigned int * gui2ndNum,unsigned int * guiResult)
 {
@@ -98,13 +87,11 @@ int Calculating_Mul(unsigned int * gui1stNum, unsigned int * gui2ndNum,unsigned 
 }
 
 /************************************************************
-FUNCTION:Calculating_Div()
-Description:该函数主要用来对输入的参数进行除法运算
-Arguments:
-Arg1:[In] 传递除法运算的第一个参数的指针
-Arg2:[In] 传递除法运算的第二个参数的指针
-Arg3:[Out] 传递除法运算存放运算结果的指针
-return:成功返回CALCEXE_RET_OK ,如果输入参数的指针为NULL，返回CALCEXE_RET_FAIL，如果除数为0，返回CALCEXE_RET_FAIL_DENOMINATOR_ZERO
+* FUNCTION   :Calculating_Div()
+* Description:multiply the input parameters
+* return     :success return CALCEXE_RET_OK 
+*             fail return CALCEXE_RET_FAIL if Divisor is zero 
+*             return CALCEXE_RET_FAIL_DENOMINATOR_ZERO
 ***********************************************************/
 int Calculating_Div(unsigned int * gui1stNum, unsigned int * gui2ndNum,unsigned int * guiResult)
 {
@@ -129,13 +116,10 @@ int Calculating_Div(unsigned int * gui1stNum, unsigned int * gui2ndNum,unsigned 
 
 
 /************************************************************
-FUNCTION:Calculating_Average()
-Description:该函数主要用来对输入的参数进行求平均值运算
-Arguments:
-Arg1:[In] 存放学生信息的结构体数组的指针
-Arg2:[In] 学生个数
-Arg3:[Out] 保存结果
-return:成功返回CALCEXE_RET_OK ,如果输入参数的指针为NULL，返回CALCEXE_RET_FAIL
+* FUNCTION   :Calculating_Average()
+* Description:average
+* return     :success return CALCEXE_RET_OK 
+*             fail return CALCEXE_RET_FAIL
 ***********************************************************/
 int Calculating_StuScoreAverage(Stu_E * pstStu, unsigned int uiStuNumCount, double * dpChineseScoreAverage, 
                                             double * dpMathScoreAverage, double * dpEnglishScoreAverage)
@@ -166,15 +150,12 @@ int Calculating_StuScoreAverage(Stu_E * pstStu, unsigned int uiStuNumCount, doub
 }
 
 
-/************************************************************
-FUNCTION:Calculating_Variance()
-Description:该函数主要用来对输入的参数进行求平均值运算
-Arguments:
-Arg1:[In] 存放学生信息的结构体数组的指针
-Arg2:[In] 学生个数
-Arg3:[Out] 保存结果
-return:成功返回CALCEXE_RET_OK ,如果输入参数的指针为NULL，返回CALCEXE_RET_FAIL
-************************************************************/
+/******************************************************************
+* FUNCTION   :Calculating_Variance()
+* Description:Perform variance calculation on the input parameters
+* return     :success return CALCEXE_RET_OK 
+*             fail return CALCEXE_RET_FAIL
+******************************************************************/
 int Calculating_StuScoreVariance(Stu_E * pstStu, unsigned int uiStuNumCount, double * dpChineseScoreVariance, 
                                             double * dpMathScoreVariance, double * dpEnglishScoreVariance)
 {

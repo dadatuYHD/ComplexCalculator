@@ -30,13 +30,13 @@ int CalcInput_StringFromBuf(char * pcStuInfoName, char * pcStuInfoChineseSocre,
 int CalcInput_StuInfoCheck(Stu_E pStuInfo);
 int CalcInput_StuInfoFromBuf(Stu_E * pStuInfo, char * pcStuInfo_a);
 
-/************************************************************
-FUNCTION:CalcInput_StuInfo()
-Description:该函数主要用来对来自标准输入的学生信息进行读取并且保存
-Arguments:
-Arg1[pStuInfo][In]:存放一个学生信息的结构体指针
-return:成功返回CALCINPUT_RET_OK,失败返回CALCINPUT_RET_FAIL
-************************************************************/
+/*******************************************************************
+* FUNCTION          :CalcInput_StuInfo()
+* Description       :Read student information from standard input
+* Arg1[pStuInfo][In]:Point to a buffer for storing student information
+* return            :success return CALCINPUT_RET_OK,fail return 
+*                    CALCINPUT_RET_FAIL
+*******************************************************************/
 int CalcInput_StuInfo(Stu_E * pStuInfo)
 {
     char cStuInfo_a[BUFSIZE];
@@ -51,7 +51,10 @@ int CalcInput_StuInfo(Stu_E * pStuInfo)
         return CALCINPUT_RET_FAIL;
     }
 
-    /*学生信息从普通的字符串，提取到学生信息结构体中保存*/
+    /***********************************************************
+     * Student information is extracted from ordinary 
+     * strings and saved in the student information structure
+     **********************************************************/
     iRet = CalcInput_StuInfoFromBuf(pStuInfo, cStuInfo_a);
     if (iRet == CALCINPUT_RET_FAIL)
     {
@@ -70,13 +73,14 @@ int CalcInput_StuInfo(Stu_E * pStuInfo)
     return CALCINPUT_RET_OK;
 }
 
-/************************************************************
-FUNCTION:Calculating_Int()
-Description:该函数主要用来对来自标准输入的运算整数字符串数的处理
-Arguments:
-Arg1[uipInputInt][In]:暂时存放字符串数字成功转换成整数的地址的指针
-return:成功返回CALCINPUT_RET_OK,输入字符串包含非法字符返回CALCINPUT_RET_FAIL_INPUT_INVALID,输入字符串不再合理范围，返回CALCINPUT_RET_FAIL_INPUT_OUTOFRANGE
-***********************************************************/
+/******************************************************************************
+* FUNCTION             :Calculating_Int()
+* Description          :Read number string from standard input
+* Arg1[uipInputInt][In]:Point to a buffer for storing number
+* return               :success return CALCINPUT_RET_OK,string 
+*                       is invalid and return CALCINPUT_RET_FAIL_INPUT_INVALID
+                        OutofBound RETURN CALCINPUT_RET_FAIL_INPUT_OUTOFRANGE
+*******************************************************************************/
 int CalcInput_Int(unsigned int * uipInputInt)
 {
     unsigned int iRet = CALCINPUT_RET_OK;
@@ -111,11 +115,11 @@ int CalcInput_Int(unsigned int * uipInputInt)
 }
 
 /************************************************************
-FUNCTION:Calculating_String()
-Description:该函数主要用来从标准输入读取字符串
-Arguments:
-Arg1[pcInputBuf][In]:存放来自标准输入字符串的指针
-return:成功返回CALCINPUT_RET_OK,错误返回CALCINPUT_RET_FAIL
+* FUNCTION            :Calculating_String()
+* Description         :Read string from standard input
+* Arg1[pcInputBuf][In]:Point to a buffer for storing STRING
+* return              :success return CALCINPUT_RET_OK 
+*                      fail return CALCINPUT_RET_FAIL
 ***********************************************************/
 int CalcInput_String(char * pcInputBuf)
 {
@@ -132,14 +136,17 @@ int CalcInput_String(char * pcInputBuf)
     return CALCINPUT_RET_OK;
 }
 
-/************************************************************
-FUNCTION:Calculating_IntFromBuf()
-Description:该函数将来字符串数字转换成整型数字,并且检查输入字符串是否合理
-Arguments:
-Arg1[uipInputInt][Out]:暂时存放字符串数字成功转换成整数的地址的指针
-Arg2[pcInputBuf][In]:存放来自标准输入字符串的指针
-return:成功返回CALCINPUT_RET_OK,错误返回CALCINPUT_RET_FAIL
-***********************************************************/
+/***********************************************************************
+* FUNCTION              :Calculating_IntFromBuf()
+* Description           :string number to integer adn check Number 
+*                        range
+* Arguments:
+* Arg1[uipInputInt][Out]:Point to after conversion integer 
+* Arg2[pcInputBuf][In]  :Point to a buffer for storing string from
+*                        Standard input
+return                  :success return CALCINPUT_RET_OK,
+*                        fail return CALCINPUT_RET_FAIL
+************************************************************************/
 int CalcInput_IntFromBuf(unsigned int * uipInputInt, char * pcInputBuf)
 {
     int iRet = CALCINPUT_RET_OK;
@@ -170,12 +177,10 @@ int CalcInput_IntFromBuf(unsigned int * uipInputInt, char * pcInputBuf)
 
 
 /************************************************************
-FUNCTION:CalcInput_StrNumConvertIntegerNum()
-Description:该函数将来字符串数字转换成整型数字
-Arguments:
-Arg1[uipInputInt][Out]:暂时存放字符串数字成功转换成整数的地址的指针
-Arg2[pcInputBuf][In]:存放来自标准输入字符串的指针
-return:无返回值
+* FUNCTION              :CalcInput_StrNumConvertIntegerNum()
+* Description           :string number to integer num
+* Arg1[uipInputInt][Out]:
+* Arg2[pcInputBuf][In]:
 ***********************************************************/
 int CalcInput_StrNumConvertIntegerNum(unsigned int * uipInputInt, char * pcInputBuf)
 {
@@ -202,11 +207,13 @@ int CalcInput_StrNumConvertIntegerNum(unsigned int * uipInputInt, char * pcInput
 }
 
 /************************************************************
-FUNCTION:CalcInput_NumCheck()
-Description:检查转换之后的数字是否在合理的范围内
-Arguments:
-Arg1[uipInputInt][In]:存放待检查的整形数字
-return:成功返回CALCINPUT_RET_OK,失败返回CALCINPUT_RET_FAIL
+* FUNCTION             :CalcInput_NumCheck()
+* Description          :Check whether the converted number is 
+*                       within a reasonable range
+* Arguments:
+* Arg1[uipInputInt][In]:Store the numbers to be checked
+* return               :success return CALCINPUT_RET_OK,fail 
+*                       return CALCINPUT_RET_FAIL
 ***********************************************************/
 int CalcInput_NumCheck(unsigned int uipInputInt)
 {
@@ -219,11 +226,11 @@ int CalcInput_NumCheck(unsigned int uipInputInt)
 }
 
 /************************************************************
-FUNCTION:CalcInput_char()
-Description:对来自标准输入的操作符字符的处理
-Arguments:
-Arg1[pcOperator][In]:存放操作的字符数组的指针
-return:成功返回CALCINPUT_RET_OK,失败返回CALCINPUT_RET_FAIL
+* FUNCTION   :CalcInput_char()
+* Description:Handling of operator characters from 
+*             standard input
+* return     :success return CALCINPUT_RET_OK,fail 
+*             return CALCINPUT_RET_FAIL
 ***********************************************************/
 int CalcInput_Char(char * pcOperator)
 {
@@ -247,11 +254,11 @@ int CalcInput_Char(char * pcOperator)
 
 
 /************************************************************
-FUNCTION:CalcInput_OperatorCheck()
-Description:检查操作字符是否合法
-Arguments:
-Arg1[pcOperator][In]:存放操作字符的数组指针
-return:成功返回CALCINPUT_RET_OK,失败返回CALCINPUT_RET_FAIL
+* FUNCTION   :CalcInput_OperatorCheck()
+* Description:Check whether the operation character is valid
+* Arguments  :
+* return     :success return CALCINPUT_RET_OK,fail 
+*             return CALCINPUT_RET_FAIL
 ***********************************************************/
 int CalcInput_OperatorCheck(char * pcOperator)
 {
@@ -266,17 +273,13 @@ int CalcInput_OperatorCheck(char * pcOperator)
     return CALCINPUT_RET_OK;
 }
 
-/************************************************************
-FUNCTION:CalcInput_StringFromBuf()
-Description:从来自标准输入的学生字符串信息，分类提取到相应的buf中
-Arguments:
-Arg1[pcStuInfoName][Out]:指向一个缓冲区，用来存放学生姓名
-Arg1[pcStuInfoChineseSocre][Out]:指向一个缓冲区，用来存放学生语文成绩
-Arg1[pcStuInfoMathSocre][Out]:指向一个缓冲区，用来存放学生数学成绩
-Arg1[pcStuInfoEnglishSocre][Out]:指向一个缓冲区，用来存放学生英语成绩
-Arg1[pcStuInfo][In]:指向一个缓冲区，用来提取学生的相应信息
-return:成功返回CALCINPUT_RET_OK,失败返回CALCINPUT_RET_FAIL
-***********************************************************/
+/**************************************************************************************
+* FUNCTION                        :CalcInput_StringFromBuf()
+* Description                     :Classify and extract the student string information 
+*                                  from standard input into the corresponding buf
+* return                          :success return CALCINPUT_RET_OK,fail 
+*                                  return CALCINPUT_RET_FAIL
+**************************************************************************************/
 int CalcInput_StringFromBuf(char * pcStuInfoName, char * pcStuInfoChineseSocre,
                                        char * pcStuInfoMathSocre, char * pcStuInfoEnglishSocre, 
                                        char * pcStuInfo)
@@ -399,10 +402,10 @@ int CalcInput_StringFromBuf(char * pcStuInfoName, char * pcStuInfoChineseSocre,
 }
                                        
 /************************************************************
-FUNCTION:CalcInput_StuInfoCheck()
-Description:检查学生信息是否合法
-Arguments:无
-return:成功返回CALCINPUT_RET_OK,失败返回CALCINPUT_RET_FAIL
+* FUNCTION   :CalcInput_StuInfoCheck()
+* Description:Check if student information is valid
+* return     :success return CALCINPUT_RET_OK,fail 
+*             return CALCINPUT_RET_FAIL
 ***********************************************************/
 int CalcInput_StuInfoCheck(Stu_E pStuInfo)
 {
@@ -430,11 +433,12 @@ int CalcInput_StuInfoCheck(Stu_E pStuInfo)
 }
 
 /************************************************************
-FUNCTION:CalcInput_StuInfoFromBuf()
-Description:把stdin标准输入读取的字符串信息提取到学生信息结构体当中
-Arguments:无
-return:成功返回CALCINPUT_RET_OK,失败返回CALCINPUT_RET_FAIL
-***********************************************************/
+* FUNCTION   :CalcInput_StuInfoFromBuf()
+* Description:Extract the string information read by stdin 
+*             into the student information structure
+* return     :success return CALCINPUT_RET_OK,fail 
+*             return CALCINPUT_RET_FAIL
+************************************************************/
 int CalcInput_StuInfoFromBuf(Stu_E * pStuInfo, char * pcStuInfo_a)
 {
     char cStuInfoName_a[BUFSIZE];
@@ -456,7 +460,11 @@ int CalcInput_StuInfoFromBuf(Stu_E * pStuInfo, char * pcStuInfo_a)
         return CALCINPUT_RET_FAIL;
     }
 
-    /*填充学生信息结构体，把学生字符串表示的分数转换成整数表示，并保存到学生结构体当中*/
+    /***********************************************************************
+    * Fill the student information structure, convert the score represented 
+    * by the student string into an integer representation, and save it in 
+    * the student structure
+    ************************************************************************/
     strncpy(pStuInfo->gcStuName, cStuInfoName_a, sizeof(cStuInfoName_a));
 #if 1
     iRet = CalcInput_StrNumConvertIntegerNum(&(pStuInfo->uiChineseScore), cStuInfoChineseSocre_a);
