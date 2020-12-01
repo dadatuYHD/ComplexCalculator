@@ -34,10 +34,10 @@ int DataCenter_GetCalcMode(char *pcSelectMode);
 int DataCenter_CreateCalcMode(void);
 int DataCenter_DestoryCalcMode(void);
 
-int DataCenter_SetCalcSimOper(SimpleModeCalc_St stSimModeCalcOperand, int flag);
-int DataCenter_GetCalcSimOper(SimpleModeCalc_St * pstSimModeCalcOperand);
-int DataCenter_CreateCalcSimOper(void);
-int DataCenter_DestoryCalcSimOper(void);
+int DataCenter_SetSimCalcOper(SimpleModeCalc_St stSimModeCalcOperand, int flag);
+int DataCenter_GetSimCalcOper(SimpleModeCalc_St * pstSimModeCalcOperand);
+int DataCenter_CreateSimCalcOper(void);
+int DataCenter_DestorySimCalcOper(void);
     
 int DataCenter_SetCalcClassInfo(Class_St stClass, int flag);
 int DataCenter_GetCalcClassInfo(Class_St * pstClass, int flag);

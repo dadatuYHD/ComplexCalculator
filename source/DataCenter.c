@@ -147,7 +147,7 @@ int DataCenter_SetSimCalcOper(SimpleModeCalc_St stSimModeCalcOperand, int flag)
  * return                               :success return DATACENTER_RET_OK
  *                                       fail return DATACENTER_RET_FAIL
  * ****************************************************************************/
-int DataCenter_GetCalcSimOper(SimpleModeCalc_St * pstSimModeCalcOperand)
+int DataCenter_GetSimCalcOper(SimpleModeCalc_St * pstSimModeCalcOperand)
 {
     if (pstSimModeCalcOperand == NULL)
     {
@@ -194,7 +194,7 @@ int DataCenter_GetCalcSimOper(SimpleModeCalc_St * pstSimModeCalcOperand)
  * return     :success return DATACENTER_RET_OK，
  *             fail return DATACENTER_RET_FAIL
  * *********************************************************/
-int DataCenter_DestoryCalcSimOper(void)
+int DataCenter_DestorySimCalcOper(void)
 {
     free(g_pstSimModeCalcOperand);
     g_pstSimModeCalcOperand = NULL;

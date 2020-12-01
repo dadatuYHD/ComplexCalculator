@@ -1,6 +1,6 @@
-object = ./obj/CalcState.o ./obj/calc_complex_YHD.o ./obj/CalcInput.o ./obj/CalcExe.o ./obj/CalcOutput.o \
+object = ./obj/CalcState.o ./obj/CalcComplexMain.o ./obj/CalcInput.o ./obj/CalcExe.o ./obj/CalcOutput.o \
 		 ./obj/DataCenter.o
-target = ./bin/calc_complex_YHD 
+target = ./bin/CalcComplexMain 
 
 
 $(target): $(object)

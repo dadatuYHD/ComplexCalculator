@@ -96,8 +96,6 @@ int ComCalcState_StatMethodSelPV(int iState);
 int ComCalcState_StatMethodSelE(int iState);
 int ComCalcState_StatMethodSelFail(int iState);
 
-//int CalcState_GetCurState(CalState_E *epState);
-
 StateControl_t g_stCalcState = {
     CALCSTATE_INIT,
     {
@@ -140,7 +138,7 @@ StateControl_t g_stCompCalcState = {
 };
                                 
 /************************************************************
- * FUNCTION:CalcState_Maint()
+ * FUNCTION:CalcState_Main()
  * Description:Main state machine control
  * Arguments:void
  * return:void
@@ -213,7 +211,7 @@ int CalState_UserModeSelect(int iState)
     }
 
     /*write SelectMode data to datacenter for save*/
-    iRet = DataCenter_SetCalcMode(&cSelectMode, DATA_SELECTMODE_DEFAULT);
+    iRet = DataCenter_SetCalcMode(&cSelectMode);
     if (iRet == DATACENTER_RET_FAIL)
     {
         calc_error("[%s]DataCenter_SetCalcMode is fail!\n", __FUNCTION__);   
@@ -243,7 +241,7 @@ int CalcState_Running(int iState)
     char cSelectMode = '\0';
 
     /*read SelectMode from datacenter*/
-    iRet = DataCenter_GetCalcMode(&cSelectMode, DATA_SELECTMODE_DEFAULT);
+    iRet = DataCenter_GetCalcMode(&cSelectMode);
     if (iRet == DATACENTER_RET_FAIL)
     {
         calc_error("[%s]DataCenter_GetCalcMode is fail!\n", __FUNCTION__);   
@@ -319,7 +317,7 @@ int CalcState_Wait(int iState)
 
 
 /************************************************************
- * FUNCTION   :CalcState_SimpleMode()
+ * FUNCTION   :SimCalcState_Main()
  * Description:The main state machine control of the 
  *             calculator working in simple mode
  * Arguments  :void
@@ -540,7 +538,7 @@ int SimCalState_Calculating(int iState)
 
     /*read the SimModeCalcOperand from the datacenter*/
     memset(&stSimModeCalcOperand, 0, sizeof(stSimModeCalcOperand));
-    iRet = DataCenter_GetCalcSimOper(&stSimModeCalcOperand, DATA_CALCSIMPLE_DEFAULT);
+    iRet = DataCenter_GetSimCalcOper(&stSimModeCalcOperand);
     if (iRet == DATACENTER_RET_FAIL)
     {
         calc_error("[%s]DataCenter_GetCalcSimOper is fail!\n", __FUNCTION__);
@@ -627,10 +625,10 @@ int SimCalState_CalcDone(int iState)
 
     /*read the SimModeCalcOperand from the datacenter*/
     memset(&stSimModeCalcOperand, 0, sizeof(stSimModeCalcOperand));
-    iRet = DataCenter_GetCalcSimOper(&stSimModeCalcOperand, DATA_CALCSIMPLE_DEFAULT);
+    iRet = DataCenter_GetSimCalcOper(&stSimModeCalcOperand);
     if (iRet == DATACENTER_RET_FAIL)
     {
-        calc_error("[%s]DataCenter_GetCalcSimOper is fail!\n", __FUNCTION__);
+        calc_error("[%s]DataCenter_GetSimCalcOper is fail!\n", __FUNCTION__);
         return SIMPCALCSTATE_CALCEXE;
     }
 
@@ -692,7 +690,7 @@ int SimCalState_Exit(int iState)
     }
     int iRet = DATACENTER_RET_OK;
     
-    iRet = DataCenter_DestoryCalcSimOper();
+    iRet = DataCenter_DestorySimCalcOper();
     if (iRet == DATACENTER_RET_FAIL)
     {
         calc_error("[%s]DataCenter_DestoryCalcSimOper is fail!\n", __FUNCTION__);
@@ -703,7 +701,7 @@ int SimCalState_Exit(int iState)
 }
 
 /************************************************************
- * FUNCTION   :ComCalcState_ComplexMode()
+ * FUNCTION   :CompCalcState_Main()
  * Description:State machine control of calculator working 
  *             in complex mode
  * Arguments  :void

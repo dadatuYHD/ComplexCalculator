@@ -55,7 +55,7 @@ dkms.conf
 *.si4project/
 
 #calc_complex
-calc_complex_YHD
+CalcComplexMain
 
 #test file
 *.txt
